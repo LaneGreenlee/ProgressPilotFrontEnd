@@ -23,6 +23,6 @@ public class PrimaryController {
     // You can keep the switchToSecondary method if you still need it for other navigation purposes
     @FXML
     private void switchToSecondary() throws IOException {
-        App.setRoot("secondary");
+        App.setRoot("signup");
     }
 }

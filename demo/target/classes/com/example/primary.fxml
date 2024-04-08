@@ -6,7 +6,7 @@
 
 <VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.PrimaryController">
     <Text text="Welcome to ProgressPilot" VBox.vgrow="ALWAYS" />
-    <Button text="Sign in as User" onAction="#signInAsUser" minWidth="200" minHeight="50" maxWidth="200" maxHeight="50" VBox.vgrow="ALWAYS"/>
+    <Button text="Sign in as Student" onAction="#signInAsUser" minWidth="200" minHeight="50" maxWidth="200" maxHeight="50" VBox.vgrow="ALWAYS"/>
     <Button text="Sign in as Advisor" onAction="#signInAsAdvisor" minWidth="200" minHeight="50" maxWidth="200" maxHeight="50" VBox.vgrow="ALWAYS"/>
     <Button text="Sign Up" onAction="#signUp" minWidth="200" minHeight="50" maxWidth="200" maxHeight="50" VBox.vgrow="ALWAYS"/>
 </VBox>

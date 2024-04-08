@@ -3,10 +3,10 @@ package com.example;
 import java.io.IOException;
 import javafx.fxml.FXML;
 
-public class SecondaryController {
+public class SignUp {
 
     @FXML
-    private void Login() throws IOException {
+    private void SignUp() throws IOException {
         // TODO: Add your logic here for user sign-in
     }
 }
