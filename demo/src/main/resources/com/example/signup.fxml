@@ -20,7 +20,7 @@
 
     <!-- Container for ImageView and VBox -->
     <HBox>
-        <ImageView fitHeight="335.0" fitWidth="345.0" pickOnBounds="true" preserveRatio="true">
+        <ImageView fitHeight="315.0" fitWidth="325.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@logo.png" />
             </image>
