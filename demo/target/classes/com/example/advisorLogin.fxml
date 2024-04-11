@@ -1,21 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.HBox?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.SecondaryController">
-    <Text text="Advisor Login" VBox.vgrow="ALWAYS" />
-    <HBox alignment="CENTER" spacing="10.0">
-        <Text text="Username:"/>
-        <TextField text="Enter Username"/>
+<StackPane style="-fx-background-color: #EBF7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.AdvisorLogin">
+
+    <!-- Inner StackPane containing VBox -->
+    <Rectangle fx:id="background" fill="#136280" height="2000" width="750" />
+
+    <!-- Container for ImageView and VBox -->
+    <HBox>
+        <ImageView fitHeight="315.0" fitWidth="325.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@logo.png" />
+            </image>
+        </ImageView>
+
+        <!-- VBox containing other elements -->
     </HBox>
-    <HBox alignment="CENTER" spacing="10.0">
-        <Text text="Password:"/>
-        <TextField text="Enter Password"/>
-    </HBox>
-    <Button text="Login" onAction="#Login" minWidth="200" minHeight="50" maxWidth="200" maxHeight="50" VBox.vgrow="ALWAYS"/>
-</VBox>
+    <VBox alignment="CENTER" spacing="50.0" xmlns:fx="http://javafx.com/fxml/1">
+        <Text fx:id="login" fill="white" text="Advisor Login" VBox.vgrow="ALWAYS" />
+
+        <HBox alignment="CENTER" spacing="10.0">
+            <Text fx:id="usernameText" fill="white" text="Username:       " />
+            <TextField prefWidth="200" promptText="Enter Username" />
+        </HBox>
+        <HBox alignment="CENTER" spacing="10.0">
+            <Text fx:id="passwordText" fill="white" text="Password:       " />
+            <TextField prefWidth="200" promptText="Enter Password" />
+        </HBox>
+        <Button maxHeight="50" maxWidth="200" minHeight="50" minWidth="200" onAction="#signUp" text="Login" VBox.vgrow="ALWAYS" />
+        <Button layoutX="30.0" mnemonicParsing="false" onAction="#signUp" text="Back" wrapText="true" />
+    </VBox>
+</StackPane>
