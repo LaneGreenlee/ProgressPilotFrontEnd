@@ -22,7 +22,7 @@
            style="-fx-background-color: #EBF7F7;">
 
     <!-- Inner StackPane containing VBox -->
-    <Rectangle fx:id="background" width="750" height="8000" fill="#136280" />
+    <Rectangle fx:id="background" width="700" height="8000" fill="#125E79"/>
 
     <!-- Container for ImageView and VBox -->
     <HBox>
