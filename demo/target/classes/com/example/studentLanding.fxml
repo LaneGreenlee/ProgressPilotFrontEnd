@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="300.0" prefWidth="300.0">
+               <children>
+                  <ImageView fitHeight="162.0" fitWidth="250.0" layoutX="22.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@logo.png" />
+                     </image>
+                  </ImageView>
+                  <Line endX="1166.0" endY="13.0" layoutX="248.0" layoutY="173.0" startX="-38.0" startY="13.0" strokeWidth="3.0">
+                     <stroke>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#101143" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </stroke>
+                     <effect>
+                        <Lighting>
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </Line>
+                  <Text fill="#111140" layoutX="256.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ProgressPilot.com">
+                     <font>
+                        <Font name="BM DoHyeon OTF" size="38.0" />
+                     </font>
+                  </Text>
+                  <TextField accessibleRole="TEXT_AREA" layoutX="1206.0" layoutY="151.0" promptText="Search" />
+               </children>
+            </AnchorPane>
+         </children></AnchorPane>
+   </children>
+</StackPane>
