@@ -78,7 +78,4 @@
          </children>
       </AnchorPane>
    </children>
-   <stylesheets>
-      <URL value="@styles.css" />
-   </stylesheets>
 </StackPane>
