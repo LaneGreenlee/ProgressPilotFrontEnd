@@ -16,6 +16,11 @@ public class PrimaryController {
         switchToAdvisorLogin();
         // TODO: Add your logic here for advisor sign-in
     }
+        @FXML
+    private void signInAsStudent() throws IOException {
+        switchToStudentLogin();
+        // TODO: Add your logic here for advisor sign-in
+    }
     
     @FXML
     private void signUp() throws IOException {
@@ -30,6 +35,9 @@ public class PrimaryController {
     }
     private void switchToAdvisorLogin() throws IOException {
         App.setRoot("advisorLogin");
+    }
+    private void switchToStudentLogin() throws IOException {
+        App.setRoot("studentLogin");
     }
     private void switchToSignUp() throws IOException {
         App.setRoot("SignUp");

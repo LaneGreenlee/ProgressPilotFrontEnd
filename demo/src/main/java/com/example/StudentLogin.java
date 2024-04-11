@@ -1,13 +1,12 @@
 package com.example;
 
 import javafx.fxml.FXML;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
 
-public class AdvisorLogin {
+public class StudentLogin {
 
     @FXML
     private void signUp() throws IOException {
