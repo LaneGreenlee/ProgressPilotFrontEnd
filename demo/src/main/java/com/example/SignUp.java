@@ -44,6 +44,7 @@ public class SignUp {
 
     @FXML
     private void signUp() throws IOException {
+        handleInput();
         switchToLogIn();
         // TODO: Add your logic here for user sign-up
     }

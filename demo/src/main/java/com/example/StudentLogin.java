@@ -16,7 +16,7 @@ public class StudentLogin {
     private TextField userNameTextField;
 
 
-    public void handleInput() {
+    private void handleInput() {
         String password = passwordTextField.getText();
         String userName = userNameTextField.getText();
         System.out.println(" " + userName + " " + password);
@@ -25,6 +25,7 @@ public class StudentLogin {
 
     @FXML
     private void signUp() throws IOException {
+        handleInput();
         switchToLogIn();
         // TODO: Add your logic here for user sign-up
     }

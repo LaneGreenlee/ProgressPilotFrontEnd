@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextArea?>
+<StackPane style="-fx-background-color: #EBF7F7;" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0"
+           prefWidth="1440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.AdvisorOverview">
+    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="300.0" prefWidth="300.0">
+            <ImageView fitHeight="162.0" fitWidth="250.0" layoutX="22.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@logo.png" />
+                </image>
+            </ImageView>
+            <Line endX="1166.0" endY="13.0" layoutX="248.0" layoutY="173.0" startX="-38.0" startY="13.0" strokeWidth="3.0">
+                <stroke>
+                    <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                            <Stop color="#101143" />
+                            <Stop color="WHITE" offset="1.0" />
+                        </stops>
+                    </LinearGradient>
+                </stroke>
+                <effect>
+                    <Lighting>
+                        <bumpInput>
+                            <Shadow />
+                        </bumpInput>
+                        <light>
+                        </light>
+                    </Lighting>
+                </effect>
+            </Line>
+            <Text fx:id="studentName" fill="#111140" layoutX="256.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Name">
+                <font>
+                    <Font name="BM DoHyeon OTF" size="38.0" />
+                </font>
+            </Text>
+            <TextField accessibleRole="TEXT_AREA" layoutX="1206.0" layoutY="151.0" promptText="Search" />
+        </AnchorPane>
+    </AnchorPane>
+    <StackPane>
+        <VBox alignment="CENTER_LEFT" style="-fx-padding: 150 0 0 100;">
+            <Rectangle width="300" height="500" fill="#09344D"
+                       arcWidth="20" arcHeight="20" />
+        </VBox>
+    </StackPane>
+    <StackPane>
+        <VBox alignment="CENTER_LEFT" style="-fx-padding: -300 0 0 100;">
+            <Text fx:id="gradeTitle" fill="white" text="       Courses Taken" >
+                <font>
+                    <Font name="BM DoHyeon OTF" size="25" />
+                </font>
+            </Text>
+        </VBox>
+    </StackPane>
+    <StackPane>
+        <VBox fx:id="vbox" alignment="CENTER_LEFT" style="-fx-padding: 100 0 0 100;">
+            <Text fx:id="outputText" fill="white"/>
+        </VBox>
+    </StackPane>
+    <StackPane>
+        <VBox alignment="CENTER" style="-fx-padding: 150 0 0 0;">
+            <Rectangle width="300" height="500" fill="#09344D"
+                       arcWidth="20" arcHeight="20" />
+        </VBox>
+    </StackPane>
+    <StackPane>
+        <VBox alignment="CENTER" style="-fx-padding: -300 0 0 0;">
+            <Text fx:id="courseToTakeTitle" fill="white" text="Courses To Take" >
+                <font>
+                    <Font name="BM DoHyeon OTF" size="25" />
+                </font>
+            </Text>
+        </VBox>
+    </StackPane>
+    <StackPane>
+        <VBox fx:id="vbox2" alignment="CENTER" style="-fx-padding: 100 0 0 -80;">
+            <Text fx:id="courseToTake" fill="white"/>
+        </VBox>
+    </StackPane>
+    <StackPane>
+        <VBox alignment="CENTER_RIGHT" style="-fx-padding: -100 100 0 0;">
+            <Rectangle width="300" height="250" fill="#09344D"
+                       arcWidth="20" arcHeight="20" />
+        </VBox>
+    </StackPane>
+    <StackPane>
+        <VBox alignment="CENTER_RIGHT" style="-fx-padding: -300 205 0 0;">
+            <Text fx:id="noteTitle" fill="white" text="Add a Note" >
+                <font>
+                    <Font name="BM DoHyeon OTF" size="25" />
+                </font>
+            </Text>
+        </VBox>
+    </StackPane>
+    <StackPane>
+        <VBox alignment="CENTER_RIGHT" style="-fx-padding: -90 160 0 0;" VBox.vgrow="ALWAYS">
+            <TextArea fx:id="notesTextArea" promptText="Add a Note" maxWidth="200" maxHeight="100" wrapText="true" />
+            <Button maxHeight="50" maxWidth="200" minHeight="50" minWidth="200"  text="Add Note" VBox.vgrow="ALWAYS" onAction="#addNote" style="-fx-padding: 0 0 0 0;"
+            >
+                <font>
+                    <Font name="BM DoHyeon OTF" size="20" />
+                </font>
+            </Button>
+        </VBox>
+    </StackPane>
+</StackPane>
+
