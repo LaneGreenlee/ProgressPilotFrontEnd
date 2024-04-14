@@ -1,13 +1,17 @@
 package com.example;
 
-import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
-
 import java.io.IOException;
 
-public class StudentLogin {
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+import lib.DataLoader;
+import lib.ProgessPilotFACADE;
+import lib.Student;
+import lib.UserList;
+
+public class StudentLogin extends App{
+
+    private Student currentStudent;
 
     @FXML
     private TextField passwordTextField;
@@ -19,7 +23,17 @@ public class StudentLogin {
     private void handleInput() {
         String password = passwordTextField.getText();
         String userName = userNameTextField.getText();
+        System.out.println(App.students);
+        facade.studentLogin(userName, password);
+        currentStudent = facade.studentLogin(userName, password);
         System.out.println(" " + userName + " " + password);
+
+        if(currentStudent != null) {
+            System.out.println("Works!");
+        }
+        else {
+            System.out.println("Fail");
+        }
         // You can now use the inputText string for further processing
     }
 

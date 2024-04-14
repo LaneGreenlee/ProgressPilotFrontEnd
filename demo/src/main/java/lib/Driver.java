@@ -35,13 +35,13 @@ public class Driver {
         progressPilot = new ProgessPilotFACADE();
         dataLoader = new DataLoader();
         dataWriter = new DataWriter();
-        dataLoader.getCourses("demo\\src\\main\\java\\data\\course_ex.json");
-        dataLoader.getAllStudents("demo\\src\\main\\java\\data\\student_ex.json");
-        dataLoader.getAllAdvisors("demo\\src\\main\\java\\data\\admin_ex.json");
+        DataLoader.getCourses("demo/src/main/java/data/course_ex.json");
+        DataLoader.getAllStudents("demo/src/main/java/data/student_ex.json");
+        DataLoader.getAllAdvisors("demo/src/main/java/data/admin_ex.json");
     }
     /**
-    * Presents the user with the choice to either sign up or log in
-    */
+     * Presents the user with the choice to either sign up or log in
+     */
     public void run() {
         System.out.println(WELCOME_MESSAGE);
         System.out.println("Press '1' for sign up\nPress '2' for login");
@@ -54,8 +54,8 @@ public class Driver {
                 signup();
             case(1):
                 login();
-            }
-        
+        }
+
         System.out.println("Good bye, have a nice day!");
     }
     /**
@@ -67,9 +67,9 @@ public class Driver {
         System.out.print("Login as a student or advisor?\n'1' for student\n'2' for advisor\n");
         String userIn = scanner.nextLine();
         int command = Integer.parseInt(userIn) - 1;
-        
+
         if(command >= 0 && command <= numCommands -1) return command;
-        
+
         return -1;
     }
     /**
@@ -79,12 +79,12 @@ public class Driver {
      */
     private int getUserCommand(int numCommands) {
         System.out.print("What would you like to do?: ");
-        
+
         String input = scanner.nextLine();
         int command = Integer.parseInt(input) - 1;
-        
+
         if(command >= 0 && command <= numCommands -1) return command;
-        
+
         return -1;
     }
     /**
@@ -108,15 +108,15 @@ public class Driver {
                 System.out.println("Advisor Login: ");
                 advisorLogin();
                 break;
-            }
+        }
     }
     private int signupType (int numCommands) {
         System.out.print("Signup as a student or advisor? \n'1' for student or '2' for advisor ");
         String userIn = scanner.nextLine();
         int command = Integer.parseInt(userIn) - 1;
-        
+
         if(command >= 0 && command <= numCommands -1) return command;
-        
+
         return -1;
     }
     private void signup() {
@@ -133,7 +133,7 @@ public class Driver {
                 System.out.println("Advisor Signup: ");
                 createAccountAdvisor();
                 break;
-            }
+        }
     }
     private String getField(String prompt) {
         System.out.print(prompt + ": ");
@@ -178,10 +178,10 @@ public class Driver {
         String userName = getField("Username");
         String password = getField("Password");
         progressPilot.studentLogin(userName, password);
-            currentStudent = progressPilot.studentLogin(userName, password);
-            //dataWriter.saveAllStudents();
-            System.out.println("Welcome " + currentStudent.getFirstName() + " " + currentStudent.getLastName() + "!");
-            studentOptions();
+        currentStudent = progressPilot.studentLogin(userName, password);
+        //dataWriter.saveAllStudents();
+        System.out.println("Welcome " + currentStudent.getFirstName() + " " + currentStudent.getLastName() + "!");
+        studentOptions();
     }
     private int studentChoice(int numCommands) {
         System.out.print("Student Choices:\n'1' View courses taken and grades earned\n'2' Courses that need to be taken\n'3' View elective courses\n'4' Add a course to be taken\n'5' Add an application area\nYour Choice: ");
@@ -190,50 +190,50 @@ public class Driver {
 
         if(command >= 0 && command <= numCommands -1)
             return command;
-        
+
         return -1;
     }
     private void studentOptions() {
         boolean run = true;
         int userChoose = 0;
         while (run){
-        int userCommand = studentChoice(5);
-        if (userCommand == -1) {
-            System.out.println("Not a valid command");
-        }
-        switch(userCommand) {
-            case(0):
-                System.out.println("View Courses: ");
-                HashMap<Course,Grade> completedCourses = currentStudent.getCompletedCourses();
-                for (Map.Entry<Course, Grade> entry : completedCourses.entrySet()) {
-                    System.out.println("Course Name: " + entry.getKey().getCourseCode() +" "+entry.getKey().getCourseNumber()+ "\t, Grade: " + entry.getValue());
-                }
-                dataWriter.saveAllStudents();
-                break;
+            int userCommand = studentChoice(5);
+            if (userCommand == -1) {
+                System.out.println("Not a valid command");
+            }
+            switch(userCommand) {
+                case(0):
+                    System.out.println("View Courses: ");
+                    HashMap<Course,Grade> completedCourses = currentStudent.getCompletedCourses();
+                    for (Map.Entry<Course, Grade> entry : completedCourses.entrySet()) {
+                        System.out.println("Course Name: " + entry.getKey().getCourseCode() +" "+entry.getKey().getCourseNumber()+ "\t, Grade: " + entry.getValue());
+                    }
+                    dataWriter.saveAllStudents();
+                    break;
 
-            case(1):
-                System.out.println("Courses that need to be taken: ");
-                ArrayList<Course> remainingCourses = currentStudent.getCoursesRemaining();
-            // Print the remaining courses
-                System.out.println("Remaining Courses:");
-                for (Course course : remainingCourses) {
-                    System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
-                }
-                //System.out.println(currentStudent.getCoursesRemaining());
-                break;
-            case(2):
-                System.out.println("View Electives: ");
-                int choice = electiveChoice(electiveOptions.length);
-                showElective(choice);
-                break;
-            case(3):
-                System.out.println("Please enter the Course Code you wish to add (CSCE, MATH etc.):");
-                studentAddCourse();
-                break;
-            case(4):
-                System.out.println("Press enter, then enter the application area you wish to add");
-                addApplicationArea();
-                break;
+                case(1):
+                    System.out.println("Courses that need to be taken: ");
+                    ArrayList<Course> remainingCourses = currentStudent.getCoursesRemaining();
+                    // Print the remaining courses
+                    System.out.println("Remaining Courses:");
+                    for (Course course : remainingCourses) {
+                        System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
+                    }
+                    //System.out.println(currentStudent.getCoursesRemaining());
+                    break;
+                case(2):
+                    System.out.println("View Electives: ");
+                    int choice = electiveChoice(electiveOptions.length);
+                    showElective(choice);
+                    break;
+                case(3):
+                    System.out.println("Please enter the Course Code you wish to add (CSCE, MATH etc.):");
+                    studentAddCourse();
+                    break;
+                case(4):
+                    System.out.println("Press enter, then enter the application area you wish to add");
+                    addApplicationArea();
+                    break;
             }
             System.out.println("\nWould you like to continue working?\n '1' for yes, '2' for no");
             String input = scanner.nextLine();
@@ -253,7 +253,7 @@ public class Driver {
 
         if(command >= 0 && command <= numCommands -1)
             return command;
-        
+
         return -1;
     }
     private void showElective(int numCommand) {
@@ -284,10 +284,10 @@ public class Driver {
                     System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
                 break;
             case(5):
-            ArrayList<Course> infCourses = progressPilot.courseList.getINF();
-            for (Course course : infCourses)
-                System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
-            break;
+                ArrayList<Course> infCourses = progressPilot.courseList.getINF();
+                for (Course course : infCourses)
+                    System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
+                break;
         }
     }
     public void studentAddCourse() {
@@ -326,8 +326,8 @@ public class Driver {
                 if (currentStudent.getMajor().courses.get(i).getCourseCode().equals("Application Area Elective")) {
                     currentStudent.getMajor().courses.set(i, applicationCourses);
                     break;
+                }
             }
-        }
         }
     }
     /**
@@ -338,8 +338,8 @@ public class Driver {
         String userName = getField("Username");
         String password = getField("password");
         progressPilot.advisorLogin(userName, password);
-            currentAdvisor = progressPilot.advisorLogin(userName, password);
-            System.out.println("Welcome " + currentAdvisor.getFirstName() + " " + currentAdvisor.getLastName() + "!");
+        currentAdvisor = progressPilot.advisorLogin(userName, password);
+        System.out.println("Welcome " + currentAdvisor.getFirstName() + " " + currentAdvisor.getLastName() + "!");
         advisorOptions();
     }
     private int advisorChoice(int numCommands) {
@@ -349,58 +349,58 @@ public class Driver {
 
         if(command >= 0 && command <= numCommands -1)
             return command;
-        
+
         return -1;
     }
     private void advisorOptions() {
         boolean run = true;
         int userChoose = 0;
         while (run){
-        int userCommand = advisorChoice(3);
-        if (userCommand == -1) {
-            System.out.println("Not a valid command");
-        }
-        switch(userCommand) {
-            case(0):
-                System.out.println("Enter new advisee's USCID number: ");
-                String adviseeID = scanner.nextLine();
-                currentAdvisor.addStudentByID(adviseeID);
-                currentStudent = currentAdvisor.getStudentByID(adviseeID);
-                if (currentStudent != null) {
-                    System.out.println(currentStudent.getUserName() + " successfully added");
-                    break;
-                } else {
-                    System.out.println("Unable to add new advisee, please try again");
-                    break;
-                }
+            int userCommand = advisorChoice(3);
+            if (userCommand == -1) {
+                System.out.println("Not a valid command");
+            }
+            switch(userCommand) {
+                case(0):
+                    System.out.println("Enter new advisee's USCID number: ");
+                    String adviseeID = scanner.nextLine();
+                    currentAdvisor.addStudentByID(adviseeID);
+                    currentStudent = currentAdvisor.getStudentByID(adviseeID);
+                    if (currentStudent != null) {
+                        System.out.println(currentStudent.getUserName() + " successfully added");
+                        break;
+                    } else {
+                        System.out.println("Unable to add new advisee, please try again");
+                        break;
+                    }
 
-            case(1):
-                System.out.println("View Advisee Courses taken: ");
-                HashMap<Course,Grade> completedCourses = currentStudent.getCompletedCourses();
-                System.out.println("You are viewing: " + currentStudent.getUserName());
-                for (Map.Entry<Course, Grade> entry : completedCourses.entrySet()) {
-                    System.out.println("Course Name: " + entry.getKey().getCourseCode() +" "+entry.getKey().getCourseNumber()+ "\t, Grade: " + entry.getValue());
-                }
-            // Print the remaining courses
-                System.out.println("Remaining Courses:");
-                ArrayList<Course> remainingCourses = currentStudent.getCoursesRemaining();
-                // Print the remaining courses
+                case(1):
+                    System.out.println("View Advisee Courses taken: ");
+                    HashMap<Course,Grade> completedCourses = currentStudent.getCompletedCourses();
+                    System.out.println("You are viewing: " + currentStudent.getUserName());
+                    for (Map.Entry<Course, Grade> entry : completedCourses.entrySet()) {
+                        System.out.println("Course Name: " + entry.getKey().getCourseCode() +" "+entry.getKey().getCourseNumber()+ "\t, Grade: " + entry.getValue());
+                    }
+                    // Print the remaining courses
+                    System.out.println("Remaining Courses:");
+                    ArrayList<Course> remainingCourses = currentStudent.getCoursesRemaining();
+                    // Print the remaining courses
                     System.out.println("Remaining Courses:");
                     for (Course course : remainingCourses) {
                         System.out.println(course.getCourseCode() + " " + course.getCourseNumber());
                     }
-                break;
-            case(2):
-                System.out.println("Add note to advisee: ");
-                System.out.println("What would you like the note to say?");
-                String note = scanner.nextLine();
+                    break;
+                case(2):
+                    System.out.println("Add note to advisee: ");
+                    System.out.println("What would you like the note to say?");
+                    String note = scanner.nextLine();
                     currentAdvisor.addStudentNotes(currentStudent.getUserName(), note);
-                
-                System.out.println("\nProof that the student note is stored for the student");
-                for (String notes : currentStudent.getNotes())
-                    System.out.println(notes);
-                break;
-        }
+
+                    System.out.println("\nProof that the student note is stored for the student");
+                    for (String notes : currentStudent.getNotes())
+                        System.out.println(notes);
+                    break;
+            }
             System.out.println("Would you like to continue working?\n '1' for yes, '2' for no");
             String input = scanner.nextLine();
             int command = Integer.parseInt(input);

@@ -1,5 +1,7 @@
 package lib;
 
+import com.example.App;
+
 public class ProgessPilotFACADE {
     private User user;
     private Student student;
@@ -38,6 +40,7 @@ public class ProgessPilotFACADE {
      * @return a student if the username and password matches someone on the list
      */
     public Student studentLogin(String userName, String password) {
+        UserList.students = App.students;
         // Assuming UserList.getUser() method is intended to find a user by username
         this.student = UserList.getStudent(userName); // Adjusted to pass userName
         if (this.student != null && this.student.getPassword().equals(password)) {
@@ -53,6 +56,8 @@ public class ProgessPilotFACADE {
      * @return a advisor if the username and password matches someone on the list
      */
     public Advisor advisorLogin(String userName, String password) {
+
+        UserList.advisors = App.advisors;
         // Assuming UserList.getUser() method is intended to find a user by username
         this.advisor = UserList.getAdvisor(userName); // Adjusted to pass userName
         if (this.advisor != null && this.advisor.getPassword().equals(password)) {

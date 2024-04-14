@@ -1,23 +1,32 @@
 package com.example;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.io.IOException;
+import lib.*;
 
 /**
  * JavaFX App
  */
 public class App extends Application {
 
+    public ProgessPilotFACADE facade = new ProgessPilotFACADE();
+
+    public static ArrayList<Student> students = new ArrayList<>();
+    public static ArrayList<Advisor> advisors = new ArrayList<>();
+    public static ArrayList<Course> courses = new ArrayList<>();
+
+
     private static Scene scene;
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("studentOverview"), 1920, 1080);
+        scene = new Scene(loadFXML("login_page"), 1920, 1080);
         stage.setScene(scene);
         stage.show();
     }
@@ -32,7 +41,14 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-
+        setup();
         launch();
+    }
+
+    public static void setup() {
+        UserList userList = new UserList();
+        courses = DataLoader.getCourses("demo/src/main/java/data/course_ex.json");
+        students = DataLoader.getAllStudents("demo/src/main/java/data/student_ex.json");
+        advisors = DataLoader.getAllAdvisors("demo/src/main/java/data/admin_ex.json");
     }
 }

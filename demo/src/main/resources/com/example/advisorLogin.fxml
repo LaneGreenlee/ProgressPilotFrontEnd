@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<StackPane style="-fx-background-color: #EBF7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.StudentLogin">
+<StackPane style="-fx-background-color: #EBF7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.AdvisorLogin">
 
     <!-- Inner StackPane containing VBox -->
     <Rectangle fx:id="background" fill="#136280" height="2000" width="750" />
