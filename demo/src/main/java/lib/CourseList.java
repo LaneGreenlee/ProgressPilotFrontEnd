@@ -13,7 +13,7 @@ public class CourseList {
     private CourseList() {
        Courses = new ArrayList<Course>();
        loader = new DataLoader();
-       Courses = loader.getCourses("json/json_examples/course_ex.json");
+       Courses = loader.getCourses("demo/src/main/java/data/course_ex.json");
     }
 
     public static CourseList getInstance(){

@@ -1,4 +1,4 @@
-package data.json.json_examples;
+package data;
 import java.util.UUID;
 public class UUID_gen {
     public static void main(String[] args) {
