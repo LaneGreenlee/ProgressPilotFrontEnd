@@ -1,0 +1,18 @@
+[{
+    "username":"",
+    "password":"",
+    "firstName":"",
+    "lastName":"",
+    "uscID":"",
+    "user_UUID":"",
+    "gradYear":"",
+    "major":"",
+    "gpa":3.6,
+    "scholarship": "",
+    "failedCourses":["","",""],
+    "currentCourses":["","",""],
+    "completedCourses": {
+        "class1uuid" : "A+",
+        "class2uuid" : "B+"
+    }
+}]
