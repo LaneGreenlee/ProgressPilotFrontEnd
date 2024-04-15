@@ -52,7 +52,7 @@
                     </Lighting>
                 </effect>
             </Line>
-            <Text fx:id="studentName" fill="#111140" layoutX="256.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Name">
+            <Text fx:id="studentName" fill="#111140" layoutX="256.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0">
                 <font>
                     <Font name="BM DoHyeon OTF" size="38.0" />
                 </font>

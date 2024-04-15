@@ -11,7 +11,7 @@ import lib.UserList;
 
 public class StudentLogin extends App{
 
-    private Student currentStudent;
+    public static Student currentStudent;
 
     @FXML
     private TextField passwordTextField;
@@ -40,12 +40,12 @@ public class StudentLogin extends App{
     @FXML
     private void signUp() throws IOException {
         handleInput();
-        switchToLogIn();
+        switchToOverview();
         // TODO: Add your logic here for user sign-up
     }
 
     @FXML
-    private void switchToLogIn() throws IOException {
-        App.setRoot("login_page");
+    private void switchToOverview() throws IOException {
+        App.setRoot("studentOverview");
     }
 }

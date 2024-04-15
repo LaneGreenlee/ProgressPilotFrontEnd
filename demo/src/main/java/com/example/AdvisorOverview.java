@@ -5,12 +5,17 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import lib.Course;
+import lib.Grade;
+import lib.Student;
+import lib.UserList;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AdvisorOverview {
+public class AdvisorOverview extends App {
 
     @FXML
     private TextArea notesTextArea;
@@ -28,60 +33,49 @@ public class AdvisorOverview {
         private Text courseToTake;
 
         @FXML
+        private Text studentName;
+
+
+        @FXML
         public void initialize() {
-            Map<String, String> textMap = new HashMap<>();
-            textMap.put("key1", "Hello");
-            textMap.put("key2", "World");
-            textMap.put("key3", "Hello World");
-            textMap.put("key4", "Hello World");
-            textMap.put("key5", "Hello World");
-            textMap.put("key6", "Hello");
-            textMap.put("key7", "World");
-            textMap.put("key8", "Hello World");
-            textMap.put("key9", "Hello World");
-            textMap.put("key10", "Hello World");
-            textMap.put("key11", "Hello");
-            textMap.put("key12", "World");
-            textMap.put("key13", "Hello World");
-            textMap.put("key14", "Hello World");
-            textMap.put("key15", "Hello World");
-            textMap.put("key16", "Hello");
-            textMap.put("key17", "World");
-            textMap.put("key18", "Hello World");
-            textMap.put("key19", "Hello World");
-            textMap.put("key20", "Hello World");
-            textMap.put("key21", "Hello");
-            textMap.put("key22", "World");
-            textMap.put("key23", "Hello World");
-            textMap.put("key24", "Hello World");
-            textMap.put("key25", "Hello World");
 
-
-            // StringBuilder to accumulate the text to display
             StringBuilder stringBuilder = new StringBuilder();
+            StringBuilder stringBuilderCourse = new StringBuilder();
 
+            StudentLogin.currentStudent = facade.studentLogin("Brax", "West");
+
+            studentName.setText("Viewing: " + StudentLogin.currentStudent.getFirstName() + " " + StudentLogin.currentStudent.getLastName());
             // Iterate over the HashMap entries and append key-value pairs to the StringBuilder
-            for (Map.Entry<String, String> entry : textMap.entrySet()) {
-                String key = entry.getKey();
-                String value = entry.getValue();
-                stringBuilder.append("\n").append("\t Class: ").append(key).append("\t Grade: ").append(value);
+            for (Map.Entry<Course, Grade> entry : StudentLogin.currentStudent.completedCourses.entrySet()) {
+                stringBuilder.append(("\tCourse Name: ") + entry.getKey().getCourseCode() + (" ") +entry.getKey().getCourseNumber()+ ("\t, Grade: ") + entry.getValue() + ("\n"));
+            }
+
+            ArrayList<Course> remainingCourses = StudentLogin.currentStudent.getCoursesRemaining();
+
+            for (Course course : remainingCourses) {
+                stringBuilderCourse.append(("\t") + course.getCourseCode() + " " + course.getCourseNumber() + "\n");
             }
 
             // Set the accumulated text to the Text element
             outputText.setText(stringBuilder.toString());
-            courseToTake.setText(stringBuilder.toString());
-
+            courseToTake.setText(stringBuilderCourse.toString());
         }
 
-    private void handleInput() {
-        String notes = notesTextArea.getText();
-        System.out.println(notes);
-    }
+        private void addNoteToStudent() {
+            StudentLogin.currentStudent = facade.studentLogin("Brax", "West");
+            String notes = notesTextArea.getText();
+            System.out.println(notes);
+            AdvisorLogin.currentAdvisor.addStudentNotes(StudentLogin.currentStudent.getUserName(), notes);
+        }
 
     @FXML
     private void addNote() throws IOException {
-        handleInput();
+        addNoteToStudent();
+        switchToLogIn();
         // TODO: Add your logic here for user sign-up
+    }
+    private void switchToLogIn() throws IOException {
+        App.setRoot("login_page");
     }
     }
 

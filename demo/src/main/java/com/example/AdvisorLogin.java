@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class AdvisorLogin extends App {
 
-    private Advisor currentAdvisor;
+    public static Advisor currentAdvisor;
 
     @FXML
     private TextField passwordTextField;
@@ -43,6 +43,6 @@ public class AdvisorLogin extends App {
 
     @FXML
     private void switchToLogIn() throws IOException {
-        App.setRoot("login_page");
+        App.setRoot("advisorOverview");
     }
 }

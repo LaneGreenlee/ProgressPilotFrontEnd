@@ -117,7 +117,7 @@ public class Student extends User{
   protected boolean meetsRequirements() {
     return false;
   }
-  protected ArrayList<String> getNotes () {
+  public ArrayList<String> getNotes() {
     ArrayList<String> ret = new ArrayList<String>();
     for (int i = 0; i< this.notes.size(); i ++) {
     ret.add(this.notes.get(i));

@@ -3,12 +3,15 @@ package com.example;
 import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import lib.Course;
+import lib.Grade;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class StudentOverview {
-    /*
+
 
     @FXML
     private VBox vbox;
@@ -27,52 +30,33 @@ public class StudentOverview {
 
     @FXML
     public void initialize() {
-        Map<String, String> textMap = new HashMap<>();
-        textMap.put("key1", "Hello");
-        textMap.put("key2", "World");
-        textMap.put("key3", "Hello World");
-        textMap.put("key4", "Hello World");
-        textMap.put("key5", "Hello World");
-        textMap.put("key6", "Hello");
-        textMap.put("key7", "World");
-        textMap.put("key8", "Hello World");
-        textMap.put("key9", "Hello World");
-        textMap.put("key10", "Hello World");
-        textMap.put("key11", "Hello");
-        textMap.put("key12", "World");
-        textMap.put("key13", "Hello World");
-        textMap.put("key14", "Hello World");
-        textMap.put("key15", "Hello World");
-        textMap.put("key16", "Hello");
-        textMap.put("key17", "World");
-        textMap.put("key18", "Hello World");
-        textMap.put("key19", "Hello World");
-        textMap.put("key20", "Hello World");
-        textMap.put("key21", "Hello");
-        textMap.put("key22", "World");
-        textMap.put("key23", "Hello World");
-        textMap.put("key24", "Hello World");
-        textMap.put("key25", "Hello World");
 
-
-        // StringBuilder to accumulate the text to display
         StringBuilder stringBuilder = new StringBuilder();
+        StringBuilder stringBuilderCourse = new StringBuilder();
+        StringBuilder stringBuilderNotes = new StringBuilder();
+
 
         // Iterate over the HashMap entries and append key-value pairs to the StringBuilder
-        for (Map.Entry<String, String> entry : textMap.entrySet()) {
-            String key = entry.getKey();
-            String value = entry.getValue();
-            stringBuilder.append("\n").append("\t Class: ").append(key).append("\t Grade: ").append(value);
+        for (Map.Entry<Course, Grade> entry : StudentLogin.currentStudent.completedCourses.entrySet()) {
+            stringBuilder.append(("\tCourse Name: ") + entry.getKey().getCourseCode() + (" ") +entry.getKey().getCourseNumber()+ ("\t, Grade: ") + entry.getValue() + ("\n"));
         }
 
+        ArrayList<Course> remainingCourses = StudentLogin.currentStudent.getCoursesRemaining();
+
+        for (Course course : remainingCourses) {
+            stringBuilderCourse.append(("\t") + course.getCourseCode() + " " + course.getCourseNumber() + "\n");
+        }
+
+        for (String notes : StudentLogin.currentStudent.getNotes())
+            stringBuilderNotes.append(notes + ("\n"));
         // Set the accumulated text to the Text element
         outputText.setText(stringBuilder.toString());
-        courseToTake.setText(stringBuilder.toString());
-        notes.setText(stringBuilder.toString());
+        courseToTake.setText(stringBuilderCourse.toString());
+        notes.setText(stringBuilderNotes.toString());
 
 
 
     }
-    */
+
 
 }

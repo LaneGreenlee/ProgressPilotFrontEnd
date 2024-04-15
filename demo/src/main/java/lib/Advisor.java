@@ -68,7 +68,7 @@ public class Advisor extends User{
      * @param notes note being left on the profile
      * @return String which contains notes for student
      */
-    protected void addStudentNotes(String username, String notes) {
+    public void addStudentNotes(String username, String notes) {
       this.students.get(this.students.indexOf(UserList.getStudent(username))).addNotes(notes);
     }
     /***
