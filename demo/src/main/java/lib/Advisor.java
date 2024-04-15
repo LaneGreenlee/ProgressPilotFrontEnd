@@ -2,7 +2,7 @@ package lib;
 import java.util.ArrayList;
 import java.util.UUID;
 public class Advisor extends User{
-    protected ArrayList<Student> students;
+    public ArrayList<Student> students;
 
     /***
      * Constructor for creating a new advisor

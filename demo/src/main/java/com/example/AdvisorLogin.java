@@ -24,7 +24,6 @@ public class AdvisorLogin extends App {
     private void handleAdvisorInput() {
         String password = passwordTextField.getText();
         String userName = userNameTextField.getText();
-        facade.advisorLogin(userName, password);
         currentAdvisor = facade.advisorLogin(userName, password);
         System.out.println(" " + userName + " " + password);
 

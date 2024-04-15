@@ -38,7 +38,6 @@ public class AdvisorOverview extends App {
 
         @FXML
         public void initialize() {
-
             StringBuilder stringBuilder = new StringBuilder();
             StringBuilder stringBuilderCourse = new StringBuilder();
 
@@ -62,10 +61,18 @@ public class AdvisorOverview extends App {
         }
 
         private void addNoteToStudent() {
-            StudentLogin.currentStudent = facade.studentLogin("Brax", "West");
-            String notes = notesTextArea.getText();
-            System.out.println(notes);
-            AdvisorLogin.currentAdvisor.addStudentNotes(StudentLogin.currentStudent.getUserName(), notes);
+            if (AdvisorLogin.currentAdvisor != null && StudentLogin.currentStudent != null) {
+                String notes = notesTextArea.getText();
+                System.out.println(notes);
+                System.out.println(StudentLogin.currentStudent.getUserName());
+
+                AdvisorLogin.currentAdvisor.students = new ArrayList<Student>();
+                AdvisorLogin.currentAdvisor.students.add(StudentLogin.currentStudent);
+                AdvisorLogin.currentAdvisor.addStudentNotes(StudentLogin.currentStudent.getUserName(), notes);
+            } else {
+                // Handle the case when AdvisorLogin.currentAdvisor or StudentLogin.currentStudent is null
+                System.out.println("Advisor or Student is not logged in.");
+            }
         }
 
     @FXML
