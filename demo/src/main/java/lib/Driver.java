@@ -175,6 +175,7 @@ public class Driver {
      * exist and if it does it signs them in
      */
     private void studentLogin() {
+        System.out.println(UserList.students);
         String userName = getField("Username");
         String password = getField("Password");
         progressPilot.studentLogin(userName, password);

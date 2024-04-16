@@ -18,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1440.0" style="-fx-background-color: #EBF7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.StudentOverview">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1440.0" style="-fx-background-color: #EBF7F7;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.StudentOverview">
         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                 <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="300.0" prefWidth="300.0">
                         <ImageView fitHeight="162.0" fitWidth="250.0" layoutX="22.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
@@ -55,31 +55,70 @@
             </AnchorPane>
     <StackPane>
         <VBox alignment="CENTER_LEFT" style="-fx-padding: 150 0 0 100;">
-            <Rectangle arcHeight="20" arcWidth="20" fill="#09344D" height="500" width="300" />
+            <Rectangle arcHeight="20" arcWidth="20" fill="#09344D" height="500" width="400" />
         </VBox>
     </StackPane>
     <StackPane>
-        <VBox alignment="CENTER_LEFT" style="-fx-padding: -300 0 0 100;">
-            <Text fx:id="gradeTitle" fill="white" text="       Courses Taken">
+        <VBox alignment="CENTER_LEFT" style="-fx-padding: -250 0 0 100;">
+            <Text fx:id="gradeTitle" fill="white" text="            Courses Taken">
                 <font>
                     <Font name="BM DoHyeon OTF" size="25" />
                 </font>
             </Text>
+            <Text fx:id="categories" fill="white" style="-fx-padding: -50 0 0 0;" text="            Courses             Grade">
+                <font>
+                    <Font name="BM DoHyeon OTF" size="20" />
+                </font>
+            </Text>
+            <Line endX="358.0" endY="13.0" layoutX="248.0" layoutY="173.0" startX="-38.0" startY="13.0" stroke="white" strokeWidth="3.0" />
         </VBox>
     </StackPane>
     <StackPane>
-        <VBox fx:id="vbox" alignment="CENTER_LEFT" style="-fx-padding: 100 0 0 100;">
-                <Text fx:id="outputText" fill="white" />
+        <VBox fx:id="vbox" alignment="CENTER_LEFT" style="-fx-padding: 230 0 0 100;">
+                <Text fx:id="outputText" fill="white">
+                        <font>
+                            <Font name="BM DoHyeon OTF" size="18" />
+                        </font>
+                </Text>
         </VBox>
     </StackPane>
     <StackPane>
         <VBox alignment="CENTER" style="-fx-padding: 150 0 0 0;">
-            <Rectangle arcHeight="20" arcWidth="20" fill="#09344D" height="500" width="300" />
+            <Rectangle arcHeight="20" arcWidth="20" fill="#09344D" height="500" width="400" />
         </VBox>
     </StackPane>
     <StackPane>
-        <VBox alignment="CENTER" style="-fx-padding: -300 0 0 0;">
-            <Text fx:id="courseToTakeTitle" fill="white" text="Courses To Take">
+        <VBox alignment="CENTER" style="-fx-padding: -250 0 0 0;">
+            <Text fx:id="toTake" fill="white" text="Courses To Take">
+                <font>
+                    <Font name="BM DoHyeon OTF" size="25" />
+                </font>
+            </Text>
+            <Text fx:id="course" fill="white" style="-fx-padding: -50 0 0 0;" text="Courses">
+                <font>
+                    <Font name="BM DoHyeon OTF" size="20" />
+                </font>
+            </Text>
+            <Line endX="705" endY="13.0" layoutX="248.0" layoutY="173.0" startX="305" startY="13.0" stroke="white" strokeWidth="3.0" />
+        </VBox>
+    </StackPane>
+    <StackPane>
+        <VBox fx:id="vbox2" alignment="CENTER" style="-fx-padding: 200 0 0 0;">
+            <Text fx:id="courseToTake" fill="white">
+                <font>
+                   <Font name="BM DoHyeon OTF" size="18" />
+                </font>
+            </Text>
+        </VBox>
+    </StackPane>
+    <StackPane>
+        <VBox alignment="CENTER_RIGHT" style="-fx-padding: -100 100 0 0;">
+            <Rectangle arcHeight="20" arcWidth="20" fill="#09344D" height="250" width="400" />
+        </VBox>
+    </StackPane>
+    <StackPane>
+        <VBox alignment="CENTER_RIGHT" style="-fx-padding: -275 225 0 0;">
+            <Text fx:id="noteTitle" fill="white" text="Latest Note">
                 <font>
                     <Font name="BM DoHyeon OTF" size="25" />
                 </font>
@@ -87,28 +126,12 @@
         </VBox>
     </StackPane>
     <StackPane>
-        <VBox fx:id="vbox2" alignment="CENTER" style="-fx-padding: 100 0 0 -80;">
-            <Text fx:id="courseToTake" fill="white" />
-        </VBox>
-    </StackPane>
-    <StackPane>
-        <VBox alignment="CENTER_RIGHT" style="-fx-padding: 150 100 0 0;">
-            <Rectangle arcHeight="20" arcWidth="20" fill="#09344D" height="500" width="300" />
-        </VBox>
-    </StackPane>
-    <StackPane>
-        <VBox alignment="CENTER_RIGHT" style="-fx-padding: -300 205 0 0;">
-            <Text fx:id="noteTitle" fill="white" text="Notes">
-                <font>
-                    <Font name="BM DoHyeon OTF" size="25" />
-                </font>
+        <VBox fx:id="vbox3" alignment="CENTER_RIGHT" style="-fx-padding: -150 380 0 0;">
+            <Text fx:id="notes" fill="white">
+                    <font>
+                        <Font name="BM DoHyeon OTF" size="18" />
+                    </font>
             </Text>
-        </VBox>
-    </StackPane>
-    <StackPane>
-        <VBox fx:id="vbox3" alignment="CENTER_RIGHT" style="-fx-padding: 100 180 0 0;">
-
-            <Text fx:id="notes" fill="white" />
         </VBox>
     </StackPane>
     <StackPane>
@@ -117,8 +140,8 @@
         </VBox>
     </StackPane>
     <StackPane>
-        <HBox alignment="BOTTOM_CENTER" spacing="300" style="-fx-padding: 50 15 0 0;">
-            <Button alignment="CENTER" maxHeight="50" maxWidth="200" minHeight="50" minWidth="200" text="Button 1" translateX="30.0" translateY="-30.0">
+        <HBox alignment="BOTTOM_CENTER" spacing="300" style="-fx-padding: 50 20 0 0;">
+            <Button alignment="BASELINE_LEFT" maxHeight="50" maxWidth="200" minHeight="50" minWidth="200" text="View Electives" textAlignment="JUSTIFY" translateX="80.0" translateY="-30.0">
                 <font>
                     <Font name="BM DoHyeon OTF" size="20" />
                 </font>
@@ -126,12 +149,12 @@
                <Point3D />
             </rotationAxis>
             </Button>
-            <Button maxHeight="50" maxWidth="200" minHeight="50" minWidth="200" text="Button 2" translateX="20.0" translateY="-30.0">
+            <Button alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" text="Add A Course" translateX="10.0" translateY="-30.0">
                 <font>
                     <Font name="BM DoHyeon OTF" size="20" />
                 </font>
             </Button>
-            <Button maxHeight="50" maxWidth="200" minHeight="50" minWidth="200" text="Button 3" translateX="-15.0" translateY="-30.0">
+            <Button alignment="BOTTOM_RIGHT" contentDisplay="CENTER" maxWidth="300" minHeight="50" minWidth="181.0" prefHeight="50.0" prefWidth="181.0" text="View All Notes" translateX="-60.0" translateY="-270.0" VBox.vgrow="ALWAYS">
                 <font>
                     <Font name="BM DoHyeon OTF" size="20" />
                 </font>

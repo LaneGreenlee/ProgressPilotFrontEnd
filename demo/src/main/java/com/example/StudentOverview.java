@@ -37,8 +37,9 @@ public class StudentOverview {
 
 
         // Iterate over the HashMap entries and append key-value pairs to the StringBuilder
+            System.out.println("\tCourse \t\t\t\t Grade");
         for (Map.Entry<Course, Grade> entry : StudentLogin.currentStudent.completedCourses.entrySet()) {
-            stringBuilder.append(("\tCourse Name: ") + entry.getKey().getCourseCode() + (" ") +entry.getKey().getCourseNumber()+ ("\t, Grade: ") + entry.getValue() + ("\n"));
+            stringBuilder.append("\t     " + entry.getKey().getCourseCode() + (" ") +entry.getKey().getCourseNumber()+ (", \t\t\t") + entry.getValue() + ("\n"));
         }
 
         ArrayList<Course> remainingCourses = StudentLogin.currentStudent.getCoursesRemaining();
