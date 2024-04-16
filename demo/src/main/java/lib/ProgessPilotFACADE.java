@@ -8,7 +8,7 @@ public class ProgessPilotFACADE {
     private Advisor advisor;
     protected UserList userlist;
     protected MajorList majorList;
-    protected CourseList courseList;
+    public CourseList courseList;
     /**
      * Creates a new userlist, majorlist and courselist
      */

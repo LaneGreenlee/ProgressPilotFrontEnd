@@ -141,7 +141,7 @@
     </StackPane>
     <StackPane>
         <HBox alignment="BOTTOM_CENTER" spacing="300" style="-fx-padding: 50 20 0 0;">
-            <Button alignment="BASELINE_LEFT" maxHeight="50" maxWidth="200" minHeight="50" minWidth="200" text="View Electives" textAlignment="JUSTIFY" translateX="80.0" translateY="-30.0">
+            <Button alignment="BASELINE_LEFT" maxHeight="50" maxWidth="200" minHeight="50" minWidth="200" text="View Electives" textAlignment="JUSTIFY" translateX="80.0" translateY="-30.0" onAction="#viewElec">
                 <font>
                     <Font name="BM DoHyeon OTF" size="20" />
                 </font>

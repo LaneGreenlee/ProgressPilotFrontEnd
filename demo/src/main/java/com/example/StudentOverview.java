@@ -6,6 +6,7 @@ import javafx.scene.text.Text;
 import lib.Course;
 import lib.Grade;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -54,9 +55,17 @@ public class StudentOverview {
         outputText.setText(stringBuilder.toString());
         courseToTake.setText(stringBuilderCourse.toString());
         notes.setText(stringBuilderNotes.toString());
+    }
 
+    @FXML
+    private void viewElec() throws IOException {
+        switchToViewElec();
+        // TODO: Add your logic here for user sign-up
+    }
 
-
+    @FXML
+    private void switchToViewElec() throws IOException {
+        App.setRoot("viewElective");
     }
 
 
