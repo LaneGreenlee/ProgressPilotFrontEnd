@@ -41,18 +41,21 @@ public class SignUp {
         // Depending on the type, call the corresponding method in the facade
         if (type.equals("Student")) {
             // Handle student sign up
-            User newUser = facade.signup(userName, password, firstName, lastName, uscId);
+            Student newStudent = facade.signupStudent(userName, password, firstName, lastName, uscId);
+            facade.userlist.addStudent(newStudent);
+
+            System.out.println(newStudent);
             // You may want to check if newStudent is null (meaning sign up failed)
         } else if (type.equals("Advisor")) {
             // Handle advisor sign up
-            User newUser = facade.signup(userName, password, firstName, lastName, uscId);
+            Advisor newAdvisor = facade.signupAdvisor(userName, password, firstName, lastName, uscId);
+            facade.userlist.addAdvisor(newAdvisor);
             // Check if newAdvisor is null as well
         } else {
             // Handle generic user sign up
-            User newUser = facade.signup(userName, password, firstName, lastName, uscId);
             // Check if newUser is null
         }
-
+       
         // After successful sign up, switch to login page
         switchToLogIn();
     }

@@ -146,8 +146,10 @@ public class Driver {
         String lastName = getField("Last Name");
         String uscID = getField("USC ID");
         Student newStudent = new Student(UUID.randomUUID(), userName, password, firstName, lastName, uscID, uscID, MajorName.Computer_Science, null, Scholarship.Hope);
+        
         progressPilot.userlist.addStudent(newStudent);
-        if(progressPilot.userlist.students.contains(newStudent)) {
+        
+        if(progressPilot.userlist.students.contains(progressPilot.userlist.getStudent(userName))) {
             System.out.println("You have successfully created an account");
         } else {
             System.out.println("Sorry an account with that username already exists");
@@ -180,8 +182,13 @@ public class Driver {
         progressPilot.studentLogin(userName, password);
         currentStudent = progressPilot.studentLogin(userName, password);
         //dataWriter.saveAllStudents();
+        if (currentStudent!=null) {
         System.out.println("Welcome " + currentStudent.getFirstName() + " " + currentStudent.getLastName() + "!");
         studentOptions();
+        }
+        else 
+        System.out.println("student is null");
+        System.exit(0);
     }
     private int studentChoice(int numCommands) {
         System.out.print("Student Choices:\n'1' View courses taken and grades earned\n'2' Courses that need to be taken\n'3' View elective courses\n'4' Add a course to be taken\n'5' Add an application area\nYour Choice: ");

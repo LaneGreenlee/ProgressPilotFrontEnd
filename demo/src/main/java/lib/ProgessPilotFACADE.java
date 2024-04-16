@@ -1,14 +1,16 @@
 package lib;
 
 import com.example.App;
+import java.util.UUID;
 
 public class ProgessPilotFACADE {
+    
     private User user;
     private Student student;
     private Advisor advisor;
-    protected UserList userlist;
-    protected MajorList majorList;
-    protected CourseList courseList;
+    public UserList userlist;
+    public MajorList majorList;
+    public CourseList courseList;
     /**
      * Creates a new userlist, majorlist and courselist
      */
@@ -100,9 +102,33 @@ public class ProgessPilotFACADE {
         if (UserList.getUser(userName) != null) {
             // User already exists
             return null;
-        } else {
+        } else { 
             // Create a new user and add it to the user list
             User newUser = new User(userName, password, firstName, lastName, uscID);
+            UserList.addUser(newUser); // Assuming there's an addUser method in UserList
+            return newUser;
+        }
+    }
+    public Student signupStudent(String userName, String password, String firstName, String lastName, String uscID) {
+        // Check if user already exists
+        if (UserList.getUser(userName) != null) {
+            // User already exists
+            return null;
+        } else { 
+            // Create a new user and add it to the user list
+            Student newStudent = new Student(UUID.randomUUID(), userName, password, firstName, lastName, uscID, uscID, MajorName.Computer_Science, null, Scholarship.Hope);
+            UserList.addUser(newStudent); // Assuming there's an addUser method in UserList
+            return newStudent;
+        }
+    }
+    public Advisor signupAdvisor(String userName, String password, String firstName, String lastName, String uscID) {
+        // Check if user already exists
+        if (UserList.getUser(userName) != null) {
+            // User already exists
+            return null;
+        } else { 
+            // Create a new user and add it to the user list
+            Advisor newUser = new Advisor(userName, password, firstName, lastName, uscID, UUID.randomUUID());
             UserList.addUser(newUser); // Assuming there's an addUser method in UserList
             return newUser;
         }
