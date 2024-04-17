@@ -154,7 +154,7 @@
                     <Font name="BM DoHyeon OTF" size="20" />
                 </font>
             </Button>
-            <Button alignment="BOTTOM_RIGHT" contentDisplay="CENTER" maxWidth="300" minHeight="50" minWidth="181.0" prefHeight="50.0" prefWidth="181.0" text="View All Notes" translateX="-60.0" translateY="-270.0" VBox.vgrow="ALWAYS">
+            <Button alignment="BOTTOM_RIGHT" contentDisplay="CENTER" maxWidth="200" minHeight="50" minWidth="181.0" prefHeight="50.0" prefWidth="181.0" text="View All Notes" translateX="-60.0" translateY="-270.0" VBox.vgrow="ALWAYS">
                 <font>
                     <Font name="BM DoHyeon OTF" size="20" />
                 </font>

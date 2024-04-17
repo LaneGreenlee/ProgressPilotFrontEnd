@@ -103,7 +103,7 @@
         <children>
             <VBox alignment="CENTER_LEFT" style="-fx-padding: 100 0 0 200;">
                 <children>
-                    <Text fx:id="elecClass" fill="white">
+                    <Text fx:id="elecClass" fill="white" visible="true">
                         <font>
                             <Font name="BM DoHyeon OTF" size="25" />
                         </font>
@@ -120,42 +120,82 @@
     </StackPane>
     <StackPane>
         <VBox alignment="CENTER_LEFT" style="-fx-padding: 150 0 0 300;">
-         <Button fx:id="GSS" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" text="GSS Elective" translateX="150.0" translateY="125.0" onAction="#gssSelect">
+            <Button fx:id="GSS" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" onAction="#gssSelect" text="GSS Elective" translateX="150.0" translateY="250.0">
             <font>
                <Font name="BM DoHyeon OTF" size="20" />
             </font>
          </Button>
-         <Button fx:id="AIU" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" text="AIU Elective" translateX="-150.0" translateY="200.0" onAction="#aiuSelect">
+         <Button fx:id="AIU" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" onAction="#aiuSelect" text="AIU Elective" translateX="-150.0" translateY="300.0">
             <font>
                <Font name="BM DoHyeon OTF" size="20" />
             </font>
          </Button>
-            <Button fx:id="GFL" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" text="GFL Elective" translateX="-150.0" translateY="-100.0" onAction="#gflSelect">
+            <Button fx:id="GFL" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" onAction="#gflSelect" text="GFL Elective" translateX="-150.0" translateY="50.0">
                 <font>
                     <Font name="BM DoHyeon OTF" size="20" />
                 </font>
             </Button>
-         <Button fx:id="GHS" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" prefWidth="200.0" text="GHS Elective" translateX="-150.0" translateY="-25.0" onAction="#ghsSelect">
+         <Button fx:id="GHS" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" onAction="#ghsSelect" prefWidth="200.0" text="GHS Elective" translateX="-150.0" translateY="100.0">
             <font>
                <Font name="BM DoHyeon OTF" size="20" />
             </font>
          </Button>
-         <Button fx:id="CMS" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" text="CMS Elective" translateX="150.0" translateY="-200.0" onAction="#cmsSelect">
+         <Button fx:id="CMS" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" onAction="#cmsSelect" text="CMS Elective" translateX="150.0" translateY="-50.0">
             <font>
                <Font name="BM DoHyeon OTF" size="20" />
             </font>
          </Button>
-         <Button fx:id="INF" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" text="INF Elective" translateX="150.0" onAction="#infSelect">
+         <Button fx:id="addCourse" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" onAction="#addACourse" text="Add A Course" translateX="-150.0" translateY="190.0">
             <font>
                <Font name="BM DoHyeon OTF" size="20" />
             </font>
          </Button>
-            <Button alignment="BOTTOM_CENTER" maxWidth="244.0" minHeight="50" minWidth="200" prefHeight="50.0" prefWidth="244.0" text="Return To Overview" translateX="-20.0" translateY="35.0" onAction="#returnToOverview">
-                <font>
-                    <Font name="BM DoHyeon OTF" size="20" />
-                </font>
-            </Button>
-
+            <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="612.0">
+                <children>
+                    <Text fx:id="promtCode" fill="white" text="Course Code: " translateX="-350.0" translateY="-100.0" visible="false">
+                        <font>
+                            <Font name="BM DoHyeon OTF" size="25" />
+                        </font>
+                        <VBox.margin>
+                            <Insets left="705.0" />
+                        </VBox.margin>
+                        <VBox.margin>
+                            <Insets left="705.0" />
+                        </VBox.margin>
+                    </Text>
+                    <Text fx:id="promtNumber" fill="white" text="Course Number: " translateX="-315.0" translateY="-50.0" visible="false">
+                        <font>
+                            <Font name="BM DoHyeon OTF" size="25" />
+                        </font>
+                        <VBox.margin>
+                            <Insets left="705.0" />
+                        </VBox.margin>
+                        <VBox.margin>
+                            <Insets left="705.0" />
+                        </VBox.margin>
+                    </Text>
+                    <TextField fx:id="courseCode" maxWidth="150.0" promptText="Enter Course Code here" translateX="-200.0" translateY="-160.0" visible="false" />
+                    <TextField fx:id="courseNumber" maxWidth="161.0" prefHeight="26.0" prefWidth="161.0" promptText="Enter Course Number here" translateX="-160.0" translateY="-105.0" visible="false" />
+                    <Button fx:id="addCourseButton" mnemonicParsing="false" prefHeight="52.0" prefWidth="89.0" text="Add Course" translateX="-310.0" translateY="-50.0" visible="false"  onAction="#addCourseInput" />
+                </children>
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+            </VBox>
+         <StackPane maxWidth="200.0" minWidth="200.0" prefHeight="150.0" prefWidth="200.0">
+            <children>
+               <Button fx:id="switchToOverviewButton" alignment="BOTTOM_CENTER" maxWidth="200.0" minHeight="50" minWidth="50.0" onAction="#returnToOverview" prefHeight="77.0" prefWidth="200.0" text="Return To &#10;Overview" translateX="150.0" translateY="-100.0">
+                   <font>
+                      <Font name="BM DoHyeon OTF" size="20" />
+                   </font>
+               </Button>
+               <Button fx:id="INF" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" onAction="#infSelect" text="INF Elective" translateX="150.0" translateY="-200.0">
+                  <font>
+                     <Font name="BM DoHyeon OTF" size="20" />
+                  </font>
+               </Button>
+            </children>
+         </StackPane>
         </VBox>
     </StackPane>
 </StackPane>
