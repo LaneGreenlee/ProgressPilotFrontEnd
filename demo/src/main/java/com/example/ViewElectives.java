@@ -14,6 +14,12 @@ import lib.Student;
 public class ViewElectives extends App{
 
     @FXML
+    private Text successAdd;
+
+    @FXML
+    private Text FailedToAdd;
+
+    @FXML
     private Button addCourseButton;
 
     @FXML
@@ -29,28 +35,11 @@ public class ViewElectives extends App{
     private TextField courseNumber;
 
     @FXML
-    private Button GSS;
-
-    @FXML
-    private Button INF;
-
-    @FXML
-    private Button GHS;
-
-    @FXML
-    private Button GFL;
-
-    @FXML
-    private Button AIU;
-
-    @FXML
-    private Button CMS;
-
-    @FXML
     private Text elecType;
 
     @FXML
     private Text elecClass;
+
 
     @FXML
     private void gssSelect() {
@@ -60,6 +49,8 @@ public class ViewElectives extends App{
         promtNumber.setVisible(false);
         addCourseButton.setVisible(false);
         elecClass.setVisible(true);
+        FailedToAdd.setVisible(false);
+        successAdd.setVisible(false);
         StringBuilder stringBuilder = new StringBuilder();
         elecType.setText("\t     GSS Electives");
         ArrayList<Course> gssCourses = facade.courseList.getGSS();
@@ -76,6 +67,8 @@ public class ViewElectives extends App{
         promtNumber.setVisible(false);
         addCourseButton.setVisible(false);
         elecClass.setVisible(true);
+        FailedToAdd.setVisible(false);
+        successAdd.setVisible(false);
         StringBuilder stringBuilder = new StringBuilder();
         elecType.setText("\t     GHS Electives");
         ArrayList<Course> ghsCourses = facade.courseList.getGHS();
@@ -92,6 +85,8 @@ public class ViewElectives extends App{
         promtNumber.setVisible(false);
         addCourseButton.setVisible(false);
         elecClass.setVisible(true);
+        FailedToAdd.setVisible(false);
+        successAdd.setVisible(false);
         StringBuilder stringBuilder = new StringBuilder();
         elecType.setText("\t     INF Electives");
         ArrayList<Course> infCourses = facade.courseList.getINF();
@@ -107,7 +102,9 @@ public class ViewElectives extends App{
         promtCode.setVisible(false);
         promtNumber.setVisible(false);
         addCourseButton.setVisible(false);
+        FailedToAdd.setVisible(false);
         elecClass.setVisible(true);
+        successAdd.setVisible(false);
         StringBuilder stringBuilder = new StringBuilder();
         elecType.setText("\t     AIU Electives");
         ArrayList<Course> aiuCourses = facade.courseList.getAIU();
@@ -124,6 +121,8 @@ public class ViewElectives extends App{
         promtNumber.setVisible(false);
         addCourseButton.setVisible(false);
         elecClass.setVisible(true);
+        FailedToAdd.setVisible(false);
+        successAdd.setVisible(false);
         StringBuilder stringBuilder = new StringBuilder();
         elecType.setText("\t     CMS Electives");
         ArrayList<Course> cmsCourses = facade.courseList.getCMS();
@@ -140,6 +139,8 @@ public class ViewElectives extends App{
         promtNumber.setVisible(false);
         addCourseButton.setVisible(false);
         elecClass.setVisible(true);
+        FailedToAdd.setVisible(false);
+        successAdd.setVisible(false);
         StringBuilder stringBuilder = new StringBuilder();
         elecType.setText("\t     GFL Electives");
         ArrayList<Course> gflCourses = facade.courseList.getGFL();
@@ -157,6 +158,8 @@ public class ViewElectives extends App{
         promtNumber.setVisible(true);
         addCourseButton.setVisible(true);
         elecClass.setVisible(false);
+        FailedToAdd.setVisible(false);
+        successAdd.setVisible(false);
     }
 
     @FXML
@@ -165,11 +168,11 @@ public class ViewElectives extends App{
         String number = courseNumber.getText();
         for(Course course : StudentLogin.currentStudent.getMajor().courses) {
             if (code.equals(course.getCourseCode()) && number.equals(course.getCourseNumber())) {
-                System.out.println("Break out");
+                FailedToAdd.setVisible(true);
+                successAdd.setVisible(false);
                 return;
             }
         }
-        System.out.println(code + number);
         int gflIndex = -1;
         for (int i = 0; i < StudentLogin.currentStudent.getMajor().courses.size(); i++) {
             Course course = StudentLogin.currentStudent.getMajor().courses.get(i);
@@ -185,20 +188,33 @@ public class ViewElectives extends App{
                         // If the course is found, replace the GFL elective with the new course
                         StudentLogin.currentStudent.getMajor().courses.set(gflIndex, course);
                         System.out.println("Course successfully added and replaced the GFL elective.");
+                        courseCode.clear();
+                        courseNumber.clear();
+                        FailedToAdd.setVisible(false);
+                        successAdd.setVisible(true);
                         return; // Exit the method once the course is added
                     } else {
                         StudentLogin.currentStudent.getMajor().courses.add(course);
+                        FailedToAdd.setVisible(false);
+                        successAdd.setVisible(true);
+                        courseCode.clear();
+                        courseNumber.clear();
                         System.out.println("Course successfully added");
                     }
                 }
             }
             System.out.println("Course not found.");
+            FailedToAdd.setVisible(true);
+            successAdd.setVisible(false);
         } else {
             for (Course course : facade.courseList.Courses) {
                 if (code.equals(course.getCourseCode()) && number.equals(course.getCourseNumber())) {
                     StudentLogin.currentStudent.getMajor().courses.add(course);
                     System.out.println("Course successfully added");
-
+                    courseCode.clear();
+                    courseNumber.clear();
+                    successAdd.setVisible(true);
+                    FailedToAdd.setVisible(false);
                 }
             }
         }

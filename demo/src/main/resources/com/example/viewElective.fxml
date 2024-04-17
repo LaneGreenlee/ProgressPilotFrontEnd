@@ -176,7 +176,17 @@
                     </Text>
                     <TextField fx:id="courseCode" maxWidth="150.0" promptText="Enter Course Code here" translateX="-200.0" translateY="-160.0" visible="false" />
                     <TextField fx:id="courseNumber" maxWidth="161.0" prefHeight="26.0" prefWidth="161.0" promptText="Enter Course Number here" translateX="-160.0" translateY="-105.0" visible="false" />
-                    <Button fx:id="addCourseButton" mnemonicParsing="false" prefHeight="52.0" prefWidth="89.0" text="Add Course" translateX="-310.0" translateY="-50.0" visible="false"  onAction="#addCourseInput" />
+                    <Button fx:id="addCourseButton" mnemonicParsing="false" onAction="#addCourseInput" prefHeight="52.0" prefWidth="89.0" text="Add Course" translateX="-310.0" translateY="-50.0" visible="false" />
+                    <Text fx:id="FailedToAdd" fill="#f80000" text="Failed to add course, &#10;please check your input and try again" textAlignment="CENTER" translateX="-175.0" visible="false">
+                        <font>
+                            <Font name="BM DoHyeon OTF" size="18.0" />
+                        </font>
+                    </Text>
+                    <Text fx:id="successAdd" fill="white" text="Successfully added course" textAlignment="CENTER" translateX="-225.0" visible="false">
+                         <font>
+                             <Font name="BM DoHyeon OTF" size="18.0" />
+                         </font>
+                    </Text>
                 </children>
             <VBox.margin>
                <Insets />
