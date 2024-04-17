@@ -163,6 +163,12 @@ public class ViewElectives extends App{
     private void addCourseInput() {
         String code = courseCode.getText().toUpperCase();
         String number = courseNumber.getText();
+        for(Course course : StudentLogin.currentStudent.getMajor().courses) {
+            if (code.equals(course.getCourseCode()) && number.equals(course.getCourseNumber())) {
+                System.out.println("Break out");
+                return;
+            }
+        }
         System.out.println(code + number);
         int gflIndex = -1;
         for (int i = 0; i < StudentLogin.currentStudent.getMajor().courses.size(); i++) {
