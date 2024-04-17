@@ -166,10 +166,12 @@ public class ViewElectives extends App{
     private void addCourseInput() {
         String code = courseCode.getText().toUpperCase();
         String number = courseNumber.getText();
+        System.out.println(code+number);
         for(Course course : StudentLogin.currentStudent.getMajor().courses) {
             if (code.equals(course.getCourseCode()) && number.equals(course.getCourseNumber())) {
-                FailedToAdd.setVisible(true);
+                System.out.println("Im here");
                 successAdd.setVisible(false);
+                FailedToAdd.setVisible(true);
                 return;
             }
         }
@@ -204,8 +206,8 @@ public class ViewElectives extends App{
                 }
             }
             System.out.println("Course not found.");
-            FailedToAdd.setVisible(true);
             successAdd.setVisible(false);
+            FailedToAdd.setVisible(true);
         } else {
             for (Course course : facade.courseList.Courses) {
                 if (code.equals(course.getCourseCode()) && number.equals(course.getCourseNumber())) {
@@ -213,8 +215,13 @@ public class ViewElectives extends App{
                     System.out.println("Course successfully added");
                     courseCode.clear();
                     courseNumber.clear();
-                    successAdd.setVisible(true);
                     FailedToAdd.setVisible(false);
+                    successAdd.setVisible(true);
+                    break;
+                }
+                else {
+                    successAdd.setVisible(false);
+                    FailedToAdd.setVisible(true);
                 }
             }
         }
