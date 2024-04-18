@@ -231,6 +231,35 @@ public class ApplicationAreaController {
         }
     }
 
+    @FXML
+    private void selectAppArea() {
+        if (computerGameRB.isSelected()) {
+
+        } else if (riskAndInsuranceRB.isSelected()) {
+
+        }else if (cyberRB.isSelected()) {
+
+        }else if (cloudNatRB.isSelected()) {
+
+        }else if (geoInfoRB.isSelected()) {
+
+        }else if (bioInfoRB.isSelected()) {
+
+        }else if (roboticsRB.isSelected()) {
+
+        }else if (newMediaRB.isSelected()) {
+
+        }else if (linguisticsRB.isSelected()) {
+
+        }else if (aeroRB.isSelected()) {
+
+        }else if (computerGameRB.isSelected()) {
+
+        }else{
+
+        }
+    }
+
     private ObservableSet<CheckBox> selectedCheckBoxes = FXCollections.observableSet();
     private ObservableSet<CheckBox> unselectedCheckBoxes = FXCollections.observableSet();
 
