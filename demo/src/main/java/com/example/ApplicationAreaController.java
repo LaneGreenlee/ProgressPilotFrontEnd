@@ -2,10 +2,36 @@ package com.example;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
-
+import javafx.scene.control.CheckBox;
 import java.io.IOException;
-
+import java.util.ArrayList;
+import java.util.List;
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.IntegerBinding;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableSet;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 public class ApplicationAreaController {
+
+    @FXML
+    private CheckBox checkbox1;
+
+    @FXML
+    private CheckBox checkbox2;
+
+    @FXML
+    private CheckBox checkbox3;
+
+    @FXML
+    private CheckBox checkbox4;
+
+    @FXML
+    private CheckBox checkbox5;
+
+    private int selectedCount = 0;
+
     @FXML
     private RadioButton computerGameRB;
 
@@ -203,6 +229,56 @@ public class ApplicationAreaController {
             aeroRB.setSelected(false);
             computerGameRB.setSelected(false);
         }
+    }
+
+    private ObservableSet<CheckBox> selectedCheckBoxes = FXCollections.observableSet();
+    private ObservableSet<CheckBox> unselectedCheckBoxes = FXCollections.observableSet();
+
+    private IntegerBinding numCheckBoxesSelected = Bindings.size(selectedCheckBoxes);
+
+    private final int maxNumSelected =  3;
+
+    @FXML
+    private void handleCheckboxAction() {
+        // Call your methods here
+        configureCheckBox(checkbox1);
+        configureCheckBox(checkbox2);
+        configureCheckBox(checkbox3);
+        configureCheckBox(checkbox4);
+        configureCheckBox(checkbox5);
+    }
+    public void initialize() {
+     handleCheckboxAction();
+        numCheckBoxesSelected.addListener((obs, oldSelectedCount, newSelectedCount) -> {
+            if (newSelectedCount.intValue() >= maxNumSelected) {
+                unselectedCheckBoxes.forEach(cb -> cb.setDisable(true));
+            } else {
+                unselectedCheckBoxes.forEach(cb -> cb.setDisable(false));
+            }
+        });
+
+
+    }
+
+    private void configureCheckBox(CheckBox checkBox) {
+
+        if (checkBox.isSelected()) {
+            selectedCheckBoxes.add(checkBox);
+        } else {
+            unselectedCheckBoxes.add(checkBox);
+        }
+
+        checkBox.selectedProperty().addListener((obs, wasSelected, isNowSelected) -> {
+            if (isNowSelected) {
+                unselectedCheckBoxes.remove(checkBox);
+                selectedCheckBoxes.add(checkBox);
+            } else {
+                selectedCheckBoxes.remove(checkBox);
+                unselectedCheckBoxes.add(checkBox);
+            }
+
+        });
+
     }
 
     @FXML
