@@ -42,6 +42,6 @@ public class AdvisorLogin extends App {
 
     @FXML
     private void switchToLogIn() throws IOException {
-        App.setRoot("advisorOverview");
+        App.setRoot("advisorLanding");
     }
 }
