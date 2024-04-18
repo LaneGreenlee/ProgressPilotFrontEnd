@@ -149,7 +149,7 @@
                <Point3D />
             </rotationAxis>
             </Button>
-            <Button alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" text="Add Application Area" translateX="10.0" translateY="-30.0">
+            <Button alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" text="Add Application Area" translateX="10.0" translateY="-30.0" onAction="#switchToViewApArea">
                 <font>
                     <Font name="BM DoHyeon OTF" size="15" />
                 </font>

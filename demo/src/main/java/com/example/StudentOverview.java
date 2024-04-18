@@ -73,4 +73,15 @@ public class StudentOverview {
         App.setRoot("studentLanding");
     }
 
+    @FXML
+    private void viewApArea() throws IOException {
+        switchToViewApArea();
+        // TODO: Add your logic here for user sign-up
+    }
+
+    @FXML
+    private void switchToViewApArea() throws IOException {
+        App.setRoot("applicationArea");
+    }
+
 }

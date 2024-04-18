@@ -169,7 +169,6 @@ public class ViewElectives extends App{
         System.out.println(code+number);
         for(Course course : StudentLogin.currentStudent.getMajor().courses) {
             if (code.equals(course.getCourseCode()) && number.equals(course.getCourseNumber())) {
-                System.out.println("Im here");
                 successAdd.setVisible(false);
                 FailedToAdd.setVisible(true);
                 return;

@@ -104,85 +104,90 @@
     <StackPane>
       <StackPane alignment="CENTER_RIGHT" maxHeight="400.0" maxWidth="381.0" minHeight="300.0" minWidth="300.0" prefHeight="573.0" prefWidth="381.0" translateX="375.0" translateY="100.0">
          <children>
-            <CheckBox fx:id="checkbox3" mnemonicParsing="false" text="3" textFill="WHITE" translateX="-250.0" translateY="-60.0" onAction="#handleCheckboxAction">
+            <CheckBox fx:id="checkbox3" mnemonicParsing="false" onAction="#handleCheckboxAction" text="3" textFill="WHITE" translateX="-250.0" translateY="-60.0">
                <font>
                   <Font name="BM DoHyeon OTF" size="18.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="checkbox4" text="4" textFill="WHITE" translateX="-250.0" translateY="-20.0" onAction="#handleCheckboxAction">
+            <CheckBox fx:id="checkbox4" onAction="#handleCheckboxAction" text="4" textFill="WHITE" translateX="-250.0" translateY="-20.0">
                <font>
                   <Font name="BM DoHyeon OTF" size="18.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="checkbox5" text="5" textFill="WHITE" translateX="-250.0" translateY="20.0" onAction="#handleCheckboxAction">
+            <CheckBox fx:id="checkbox5" onAction="#handleCheckboxAction" text="5" textFill="WHITE" translateX="-250.0" translateY="20.0">
                <font>
                   <Font name="BM DoHyeon OTF" size="18.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="checkbox2" text="2" textFill="WHITE" translateX="-250.0" translateY="-100.0" onAction="#handleCheckboxAction">
+            <CheckBox fx:id="checkbox2" onAction="#handleCheckboxAction" text="2" textFill="WHITE" translateX="-250.0" translateY="-100.0">
                <font>
                   <Font name="BM DoHyeon OTF" size="18.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="checkbox1" mnemonicParsing="false" text="1" textFill="WHITE" translateX="-250.0" translateY="-140.0" onAction="#handleCheckboxAction">
+            <CheckBox fx:id="checkbox1" mnemonicParsing="false" onAction="#handleCheckboxAction" text="1" textFill="WHITE" translateX="-250.0" translateY="-140.0">
                <font>
                   <Font name="BM DoHyeon OTF" size="18.0" />
                </font>
             </CheckBox>
+            <Button mnemonicParsing="false" text="Confirm Selected" translateX="-100.0" translateY="100.0" onAction="#setAppClasses">
+               <font>
+                  <Font name="BM DoHyeon OTF" size="15.0" />
+               </font>
+            </Button>
          </children>
       </StackPane>
         <VBox alignment="CENTER_LEFT" maxWidth="700.0" minWidth="500.0" prefWidth="500.0" style="-fx-padding: 150 0 0 300;" translateX="-400.0">
-         <RadioButton fx:id="computerGameRB" text="Computer Game Design and Development" textFill="WHITE" translateX="-150.0" translateY="40.0" onAction="#selectComputerGame">
+         <RadioButton fx:id="computerGameRB" onAction="#selectComputerGame" text="Computer Game Design and Development" textFill="WHITE" translateX="-150.0" translateY="40.0">
             <font>
                <Font name="BM DoHyeon OTF" size="15.0" />
             </font>
          </RadioButton>
-         <RadioButton fx:id="geoInfoRB" text="Geographic Information Systems Developer" textFill="WHITE" translateX="-150.0" translateY="50.0" onAction="#selectGeoInfo">
+         <RadioButton fx:id="geoInfoRB" onAction="#selectGeoInfo" text="Geographic Information Systems Developer" textFill="WHITE" translateX="-150.0" translateY="50.0">
             <font>
                <Font name="BM DoHyeon OTF" size="15.0" />
             </font>
          </RadioButton>
-         <RadioButton fx:id="cloudNatRB" text="Cloud Native Application Development" textFill="WHITE" translateX="-150.0" translateY="60.0" onAction="#selectCloudNat">
+         <RadioButton fx:id="cloudNatRB" onAction="#selectCloudNat" text="Cloud Native Application Development" textFill="WHITE" translateX="-150.0" translateY="60.0">
             <font>
                <Font name="BM DoHyeon OTF" size="15.0" />
             </font>
          </RadioButton>
-         <RadioButton fx:id="dataRB" text="Data Scientist" textFill="WHITE" translateX="-150.0" translateY="70.0" onAction="#selectData">
+         <RadioButton fx:id="dataRB" onAction="#selectData" text="Data Scientist" textFill="WHITE" translateX="-150.0" translateY="70.0">
             <font>
                <Font name="BM DoHyeon OTF" size="15.0" />
             </font>
          </RadioButton>
-         <RadioButton fx:id="bioInfoRB" text="Bioinformatics" textFill="WHITE" translateX="-150.0" translateY="80.0" onAction="#selectBioInfo">
+         <RadioButton fx:id="bioInfoRB" onAction="#selectBioInfo" text="Bioinformatics" textFill="WHITE" translateX="-150.0" translateY="80.0">
             <font>
                <Font name="BM DoHyeon OTF" size="15.0" />
             </font>
          </RadioButton>
-         <RadioButton fx:id="roboticsRB" text="Robotics" textFill="WHITE" translateX="-150.0" translateY="90.0" onAction="#selectRobotics">
+         <RadioButton fx:id="roboticsRB" onAction="#selectRobotics" text="Robotics" textFill="WHITE" translateX="-150.0" translateY="90.0">
             <font>
                <Font name="BM DoHyeon OTF" size="15.0" />
             </font>
          </RadioButton>
-         <RadioButton fx:id="newMediaRB" text="New Media" textFill="WHITE" translateX="-150.0" translateY="100.0" onAction="#selectNewMedia">
+         <RadioButton fx:id="newMediaRB" onAction="#selectNewMedia" text="New Media" textFill="WHITE" translateX="-150.0" translateY="100.0">
             <font>
                <Font name="BM DoHyeon OTF" size="15.0" />
             </font>
          </RadioButton>
-         <RadioButton fx:id="linguisticsRB" text="Linguistics" textFill="WHITE" translateX="-150.0" translateY="110.0" onAction="#selectLinguistics">
+         <RadioButton fx:id="linguisticsRB" onAction="#selectLinguistics" text="Linguistics" textFill="WHITE" translateX="-150.0" translateY="110.0">
             <font>
                <Font name="BM DoHyeon OTF" size="15.0" />
             </font>
          </RadioButton>
-         <RadioButton fx:id="riskAndInsuranceRB" text="Risk and Insurance" textFill="WHITE" translateX="-150.0" translateY="120.0" onAction="#selectRiskAndInsurance">
+         <RadioButton fx:id="riskAndInsuranceRB" onAction="#selectRiskAndInsurance" text="Risk and Insurance" textFill="WHITE" translateX="-150.0" translateY="120.0">
             <font>
                <Font name="BM DoHyeon OTF" size="15.0" />
             </font>
          </RadioButton>
-         <RadioButton fx:id="aeroRB" text="Aerospace Engineering" textFill="WHITE" translateX="-150.0" translateY="130.0" onAction="#selectAero">
+         <RadioButton fx:id="aeroRB" onAction="#selectAero" text="Aerospace Engineering" textFill="WHITE" translateX="-150.0" translateY="130.0">
             <font>
                <Font name="BM DoHyeon OTF" size="15.0" />
             </font>
          </RadioButton>
-         <RadioButton fx:id="cyberRB" text="Cybersecurity" textFill="WHITE" translateX="-150.0" translateY="140.0" onAction="#selectCyber">
+         <RadioButton fx:id="cyberRB" onAction="#selectCyber" text="Cybersecurity" textFill="WHITE" translateX="-150.0" translateY="140.0">
             <font>
                <Font name="BM DoHyeon OTF" size="15.0" />
             </font>

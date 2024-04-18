@@ -361,30 +361,75 @@ public class ApplicationAreaController extends App {
         });
 
     }
-
+    private String code;
+    private String number;
+    private ArrayList<Course> apCourses = new ArrayList<>();
+    @FXML
     private void setAppClasses() {
-        ArrayList<Course> apCourses = new ArrayList<Course>();
-        ApplicationArea applicationArea = new ApplicationArea("Cybersecurity", apCourses);
-        applicationArea.setRequiredCourses();
-        if(checkbox1.isSelected()) {
-            apCourses.add(courseList.getCourse("0a435957-9795-42ba-932e-0cfc1c22f749"));
-        }
-        if(checkbox2.isSelected()) {
-            apCourses.add(courseList.getCourse("08489519-19be-4bb5-a64e-3524ee76378e"));
-        }
-        if(checkbox3.isSelected()) {
-            apCourses.add(courseList.getCourse("57c713a3-7b78-49c6-8b0b-475dd2b5f14b"));
-        }
-        if(checkbox4.isSelected()) {
-            apCourses.add(courseList.getCourse("3c7b644e-f53f-41a0-837b-7c10dce6619d"));
-        }
-        if(checkbox5.isSelected()) {
-            apCourses.add(courseList.getCourse("81a869d4-bf87-4715-b4d8-8d7e14d6f273"));
-        }
-        for (Course applicationCourses : applicationArea.requiredCourses) {
-            for (int i = 0; i < currentStudent.getMajor().courses.size(); i++) {
-                if (currentStudent.getMajor().courses.get(i).getCourseCode().equals("Application Area Elective")) {
-                    currentStudent.getMajor().courses.set(i, applicationCourses);
+            if (checkbox1.isSelected()) {
+                code = "CRJU";
+                number = "313";
+                System.out.println("Got here");
+                for (Course course : facade.courseList.Courses) {
+                    if (code.equals(course.getCourseCode()) && number.equals(course.getCourseNumber())) {
+                        apCourses.add(course);
+                        System.out.println("Added");
+                    }
+                }
+                checkbox1.setSelected(false);
+            }
+            if (checkbox2.isSelected()) {
+                code = "CRJU";
+                number = "314";
+                for (Course course : facade.courseList.Courses) {
+                    if (code.equals(course.getCourseCode()) && number.equals(course.getCourseNumber())) {
+                        apCourses.add(course);
+                        System.out.println("Added");
+                    }
+                }
+                checkbox2.setSelected(false);
+            }
+            if (checkbox3.isSelected()) {
+                code = "LAWS";
+                number = "525";
+                int up = 1;
+                for (Course course : facade.courseList.Courses) {
+                    if (code.equals(course.getCourseCode()) && number.equals(course.getCourseNumber())) {
+                        apCourses.add(course);
+                        System.out.println("Added");
+                    }
+                    System.out.println(up++);
+                }
+
+                checkbox3.setSelected(false);
+            }
+            if (checkbox4.isSelected()) {
+                code = "LAWS";
+                number = "526";
+                for (Course course : facade.courseList.Courses) {
+                    if (code.equals(course.getCourseCode()) && number.equals(course.getCourseNumber())) {
+                        apCourses.add(course);
+                        System.out.println("Added");
+                    }
+                }
+                checkbox4.setSelected(false);
+            }
+            if (checkbox5.isSelected()) {
+                code = "JOUR";
+                number = "303";
+                for (Course course : facade.courseList.Courses) {
+                    if (code.equals(course.getCourseCode()) && number.equals(course.getCourseNumber())) {
+                        apCourses.add(course);
+                        System.out.println("Added");
+                    }
+                }
+                checkbox5.setSelected(false);
+            }
+        System.out.println(apCourses);
+        for (Course applicationCourses : apCourses) {
+            for (int i = 0; i < StudentLogin.currentStudent.getMajor().courses.size(); i++) {
+                if (StudentLogin.currentStudent.getMajor().courses.get(i).getCourseCode().equals("Application Area Elective")) {
+                    StudentLogin.currentStudent.getMajor().courses.set(i, applicationCourses);
                     break;
                 }
             }
@@ -409,4 +454,51 @@ public class ApplicationAreaController extends App {
         checkbox4.setVisible(true);
         checkbox5.setVisible(true);
     }
+
+    /*
+           String code = courseCode.getText().toUpperCase();
+        String number = courseNumber.getText();
+        System.out.println(code+number);
+        for(Course course : StudentLogin.currentStudent.getMajor().courses) {
+            if (code.equals(course.getCourseCode()) && number.equals(course.getCourseNumber())) {
+                successAdd.setVisible(false);
+                FailedToAdd.setVisible(true);
+                return;
+            }
+        }
+        int gflIndex = -1;
+        for (int i = 0; i < StudentLogin.currentStudent.getMajor().courses.size(); i++) {
+            Course course = StudentLogin.currentStudent.getMajor().courses.get(i);
+            if (course.getCourseCode().equals("GFL Elective")) {
+                gflIndex = i;
+                break;
+            }
+        }
+        if (gflIndex != -1) {
+            for (Course course : facade.courseList.Courses) {
+                if (code.equals(course.getCourseCode()) && number.equals(course.getCourseNumber())) {
+                    if (Course.isGFL(course)) {
+                        // If the course is found, replace the GFL elective with the new course
+                        StudentLogin.currentStudent.getMajor().courses.set(gflIndex, course);
+                        System.out.println("Course successfully added and replaced the GFL elective.");
+                        courseCode.clear();
+                        courseNumber.clear();
+                        FailedToAdd.setVisible(false);
+                        successAdd.setVisible(true);
+                        return; // Exit the method once the course is added
+                    } else {
+                        StudentLogin.currentStudent.getMajor().courses.add(course);
+                        FailedToAdd.setVisible(false);
+                        successAdd.setVisible(true);
+                        courseCode.clear();
+                        courseNumber.clear();
+                        System.out.println("Course successfully added");
+                    }
+                }
+            }
+            System.out.println("Course not found.");
+            successAdd.setVisible(false);
+            FailedToAdd.setVisible(true);
+        }
+     */
 }

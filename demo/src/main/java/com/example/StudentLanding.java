@@ -15,6 +15,11 @@ public class StudentLanding extends App {
 
     @FXML
     private void switchToOverview() throws IOException {
+        setOverview();
+    }
+
+    @FXML
+    private void setOverview() throws IOException {
         App.setRoot("studentOverview");
     }
 

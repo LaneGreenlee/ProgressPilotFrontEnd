@@ -36,6 +36,7 @@ public class PrimaryController {
     private void switchToAdvisorLogin() throws IOException {
         App.setRoot("advisorLogin");
     }
+    @FXML
     private void switchToStudentLogin() throws IOException {
         App.setRoot("studentLogin");
     }

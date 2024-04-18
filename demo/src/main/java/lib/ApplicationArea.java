@@ -24,13 +24,10 @@ public class ApplicationArea {
      * application area the student adds to their major
      */
     public void setRequiredCourses() {
-        Scanner scanner = new Scanner(System.in);
         Set<String> selectedCourses = new HashSet<>();
         requiredCourses.clear(); // Clears the list to ensure it's empty before adding new courses.
     
         System.out.println("Enter the application area:");
-        String applicationArea = scanner.nextLine().trim();
-    
         switch (applicationArea) {
             case "Bioinformatics":
                 System.out.println("Select three unique courses from the following list for Bioinformatics:");
