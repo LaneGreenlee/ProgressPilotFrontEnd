@@ -68,5 +68,9 @@ public class StudentOverview {
         App.setRoot("viewElective");
     }
 
+    @FXML
+    private void switchToLanding() throws IOException {
+        App.setRoot("studentLanding");
+    }
 
 }

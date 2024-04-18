@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane style="-fx-background-color: #EBF7F7;" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1440.0" style="-fx-background-color: #EBF7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.StudentLanding">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -69,18 +69,18 @@
                      </image>
                   </ImageView>
                   <Rectangle arcHeight="20" arcWidth="20" fill="#0c3146" height="455.0" layoutX="492.0" layoutY="97.0" width="397.0" />
-                  <Button layoutX="126.0" layoutY="315.0" mnemonicParsing="false" prefHeight="137.0" prefWidth="273.0" text="Student Overview">
+                  <Button fx:id="overviewButton" layoutX="126.0" layoutY="315.0" mnemonicParsing="false" onAction="#switchToOverview" prefHeight="137.0" prefWidth="273.0" text="Student Overview">
                      <font>
                         <Font name="BM DoHyeon OTF" size="23.0" />
                      </font>
                   </Button>
                   <Rectangle arcHeight="20" arcWidth="20" fill="#3588b9" height="455.0" layoutX="911.0" layoutY="96.0" width="397.0" />
-                  <Button layoutX="550.0" layoutY="321.0" mnemonicParsing="false" prefHeight="137.0" prefWidth="273.0" text="Choose Elective">
+                  <Button fx:id="electiveButton" layoutX="550.0" layoutY="321.0" mnemonicParsing="false" onAction="#chooseElective" prefHeight="137.0" prefWidth="273.0" text="Choose Elective">
                      <font>
                         <Font name="BM DoHyeon OTF" size="23.0" />
                      </font>
                   </Button>
-                  <Button layoutX="973.0" layoutY="321.0" mnemonicParsing="false" prefHeight="137.0" prefWidth="273.0" text="Choose Application &#10;&#9;    Area">
+                  <Button layoutX="973.0" layoutY="321.0" mnemonicParsing="false" onAction="#chooseApplicationArea" prefHeight="137.0" prefWidth="273.0" text="Choose Application &#10;&#9;    Area">
                      <font>
                         <Font name="BM DoHyeon OTF" size="23.0" />
                      </font>

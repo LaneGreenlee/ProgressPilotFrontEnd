@@ -399,7 +399,7 @@ public class ApplicationAreaController extends App {
 
     @FXML
     private void switchToOverview() throws IOException {
-        App.setRoot("studentOverview");
+        App.setRoot("studentLanding");
     }
 
     private void makeVisible() {
