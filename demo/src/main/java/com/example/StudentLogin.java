@@ -23,6 +23,7 @@ public class StudentLogin extends App{
     private void handleInput() {
         String password = passwordTextField.getText();
         String userName = userNameTextField.getText();
+        System.out.println(App.students);
         currentStudent = facade.studentLogin(userName, password);
         System.out.println(" " + userName + " " + password);
 
