@@ -44,6 +44,6 @@ public class StudentLogin extends App{
 
     @FXML
     private void switchToOverview() throws IOException {
-        App.setRoot("studentOverview");
+        App.setRoot("studentLanding");
     }
 }
