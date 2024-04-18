@@ -1,5 +1,6 @@
 package com.example;
 
+import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.CheckBox;
@@ -13,7 +14,15 @@ import javafx.collections.ObservableSet;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
-public class ApplicationAreaController {
+import lib.ApplicationArea;
+import lib.Course;
+import lib.CourseList;
+
+import static com.example.StudentLogin.currentStudent;
+
+public class ApplicationAreaController extends App {
+
+    private CourseList courseList = CourseList.getInstance();
 
     @FXML
     private CheckBox checkbox1;
@@ -29,8 +38,6 @@ public class ApplicationAreaController {
 
     @FXML
     private CheckBox checkbox5;
-
-    private int selectedCount = 0;
 
     @FXML
     private RadioButton computerGameRB;
@@ -233,28 +240,73 @@ public class ApplicationAreaController {
 
     @FXML
     private void selectAppArea() {
+        makeVisible();
         if (computerGameRB.isSelected()) {
-
+            checkbox1.setText("MART 201");
+            checkbox2.setText("MART 210");
+            checkbox3.setText("MART 380");
+            checkbox4.setText("MART 371");
+            checkbox5.setText("MATH 527");
         } else if (riskAndInsuranceRB.isSelected()) {
-
+            checkbox1.setText("FINA 341");
+            checkbox2.setText("FINA 363");
+            checkbox3.setText("FINA 442");
+            checkbox4.setText("FINA 443");
+            checkbox5.setText("FINA 444");
         }else if (cyberRB.isSelected()) {
-
+            checkbox1.setText("CRJU 313");
+            checkbox2.setText("CRJU 314");
+            checkbox3.setText("LAWS 525");
+            checkbox4.setText("LAWS 526");
+            checkbox5.setText("JOUR 303");
         }else if (cloudNatRB.isSelected()) {
-
+            checkbox1.setText("MGMT 371");
+            checkbox2.setText("MGMT 374");
+            checkbox3.setText("MGMT 376");
+            checkbox4.setText("MGMT 402");
+            checkbox5.setText("MGMT 403");
         }else if (geoInfoRB.isSelected()) {
-
+            checkbox1.setText("GEOG 341");
+            checkbox2.setText("GEOG 345");
+            checkbox3.setText("GEOG 363");
+            checkbox4.setText("GEOG 541");
+            checkbox5.setText("GEOG 551");
         }else if (bioInfoRB.isSelected()) {
-
+            checkbox1.setText("BIOL 301");
+            checkbox2.setText("BIOL 302");
+            checkbox3.setText("BIOL 303");
+            checkbox4.setText("CHEM 333");
+            checkbox5.setVisible(false);
         }else if (roboticsRB.isSelected()) {
-
+            checkbox1.setText("EMCH 535");
+            checkbox2.setText("ELCT 331");
+            checkbox3.setText("ELCT 531");
+            checkbox4.setVisible(false);
+            checkbox5.setVisible(false);
         }else if (newMediaRB.isSelected()) {
-
+            checkbox1.setText("MART 201");
+            checkbox2.setText("MART 210");
+            checkbox3.setText("MART 371");
+            checkbox4.setText("MART 380");
+            checkbox5.setVisible(false);
         }else if (linguisticsRB.isSelected()) {
-
+            checkbox1.setText("LING 340");
+            checkbox2.setText("LING 421");
+            checkbox3.setText("LING 440");
+            checkbox4.setText("LING 565");
+            checkbox5.setText("LING 567");
         }else if (aeroRB.isSelected()) {
-
-        }else if (computerGameRB.isSelected()) {
-
+            checkbox1.setText("EMCH 557");
+            checkbox2.setText("EMCH 578");
+            checkbox3.setText("EMCH 508");
+            checkbox4.setText("EMCH 585");
+            checkbox5.setVisible(false);
+        }else if (dataRB.isSelected()) {
+            checkbox1.setText("STAT 511");
+            checkbox2.setText("STAT 512");
+            checkbox3.setText("STAT 513");
+            checkbox4.setText("STAT 530");
+            checkbox5.setText("STAT 535");
         }else{
 
         }
@@ -310,6 +362,35 @@ public class ApplicationAreaController {
 
     }
 
+    private void setAppClasses() {
+        ArrayList<Course> apCourses = new ArrayList<Course>();
+        ApplicationArea applicationArea = new ApplicationArea("Cybersecurity", apCourses);
+        applicationArea.setRequiredCourses();
+        if(checkbox1.isSelected()) {
+            apCourses.add(courseList.getCourse("0a435957-9795-42ba-932e-0cfc1c22f749"));
+        }
+        if(checkbox2.isSelected()) {
+            apCourses.add(courseList.getCourse("08489519-19be-4bb5-a64e-3524ee76378e"));
+        }
+        if(checkbox3.isSelected()) {
+            apCourses.add(courseList.getCourse("57c713a3-7b78-49c6-8b0b-475dd2b5f14b"));
+        }
+        if(checkbox4.isSelected()) {
+            apCourses.add(courseList.getCourse("3c7b644e-f53f-41a0-837b-7c10dce6619d"));
+        }
+        if(checkbox5.isSelected()) {
+            apCourses.add(courseList.getCourse("81a869d4-bf87-4715-b4d8-8d7e14d6f273"));
+        }
+        for (Course applicationCourses : applicationArea.requiredCourses) {
+            for (int i = 0; i < currentStudent.getMajor().courses.size(); i++) {
+                if (currentStudent.getMajor().courses.get(i).getCourseCode().equals("Application Area Elective")) {
+                    currentStudent.getMajor().courses.set(i, applicationCourses);
+                    break;
+                }
+            }
+        }
+    }
+
     @FXML
     private void returnToOverview() throws IOException {
         switchToOverview();
@@ -319,5 +400,13 @@ public class ApplicationAreaController {
     @FXML
     private void switchToOverview() throws IOException {
         App.setRoot("studentOverview");
+    }
+
+    private void makeVisible() {
+        checkbox1.setVisible(true);
+        checkbox2.setVisible(true);
+        checkbox3.setVisible(true);
+        checkbox4.setVisible(true);
+        checkbox5.setVisible(true);
     }
 }

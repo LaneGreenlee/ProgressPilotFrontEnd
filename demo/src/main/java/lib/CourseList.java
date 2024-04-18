@@ -48,7 +48,7 @@ public class CourseList {
      * @param courseName course that is being searched for
      * @return course that has the name of the String passed in 
      */
-    protected Course getCourse(String courseName) {
+    public Course getCourse(String courseName) {
       String normalizedInput = courseName.trim().toUpperCase(); // Normalize input for comparison
   
       for (int i = 0; i < Courses.size(); i++) {
@@ -115,7 +115,7 @@ public ArrayList<Course> getINF() {
   }
   return infCourses;
 }
-    protected Course getCourse(UUID id) {
+    public Course getCourse(UUID id) {
       for (int i =0; i < Courses.size(); i++) {
         if (id.equals(Courses.get(i).getCourseID())) {
           return Courses.get(i);

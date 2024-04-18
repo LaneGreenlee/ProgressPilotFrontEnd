@@ -106,27 +106,27 @@
          <children>
             <CheckBox fx:id="checkbox3" mnemonicParsing="false" text="3" textFill="WHITE" translateX="-250.0" translateY="-60.0" onAction="#handleCheckboxAction">
                <font>
-                  <Font name="BM DoHyeon OTF" size="15.0" />
+                  <Font name="BM DoHyeon OTF" size="18.0" />
                </font>
             </CheckBox>
             <CheckBox fx:id="checkbox4" text="4" textFill="WHITE" translateX="-250.0" translateY="-20.0" onAction="#handleCheckboxAction">
                <font>
-                  <Font name="BM DoHyeon OTF" size="15.0" />
+                  <Font name="BM DoHyeon OTF" size="18.0" />
                </font>
             </CheckBox>
             <CheckBox fx:id="checkbox5" text="5" textFill="WHITE" translateX="-250.0" translateY="20.0" onAction="#handleCheckboxAction">
                <font>
-                  <Font name="BM DoHyeon OTF" size="15.0" />
+                  <Font name="BM DoHyeon OTF" size="18.0" />
                </font>
             </CheckBox>
             <CheckBox fx:id="checkbox2" text="2" textFill="WHITE" translateX="-250.0" translateY="-100.0" onAction="#handleCheckboxAction">
                <font>
-                  <Font name="BM DoHyeon OTF" size="15.0" />
+                  <Font name="BM DoHyeon OTF" size="18.0" />
                </font>
             </CheckBox>
             <CheckBox fx:id="checkbox1" mnemonicParsing="false" text="1" textFill="WHITE" translateX="-250.0" translateY="-140.0" onAction="#handleCheckboxAction">
                <font>
-                  <Font name="BM DoHyeon OTF" size="15.0" />
+                  <Font name="BM DoHyeon OTF" size="18.0" />
                </font>
             </CheckBox>
          </children>
@@ -187,7 +187,7 @@
                <Font name="BM DoHyeon OTF" size="15.0" />
             </font>
          </RadioButton>
-         <Button mnemonicParsing="false" text="Confirm Selection" translateX="180.0" translateY="100.0">
+         <Button mnemonicParsing="false" text="Confirm Selection" translateX="180.0" translateY="100.0" onAction="#selectAppArea">
             <font>
                <Font name="BM DoHyeon OTF" size="18.0" />
             </font>

@@ -374,6 +374,24 @@
     "isTransfer":false,
     "courseID":"81a869d4-bf87-4715-b4d8-8d7e14d6f273"
 },
+    {
+        "courseCode":"CRJU",
+        "courseNumber":"314",
+        "courseAttributes":["PR"],
+        "courseDescription":[" "],
+        "creditHours":3,
+        "isTransfer":false,
+        "courseID":"08489519-19be-4bb5-a64e-3524ee76378e"
+    },
+    {
+        "courseCode":"LAWS",
+        "courseNumber":"526",
+        "courseAttributes":["PR"],
+        "courseDescription":[" "],
+        "creditHours":3,
+        "isTransfer":false,
+        "courseID":"3c7b644e-f53f-41a0-837b-7c10dce6619d"
+    },
 
 
 {

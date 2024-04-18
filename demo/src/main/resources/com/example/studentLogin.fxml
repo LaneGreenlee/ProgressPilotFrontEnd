@@ -59,7 +59,7 @@
             <Font name="BM DoHyeon OTF" size="20" />
         </font>
          </Button>
-        <Button layoutX="30.0" mnemonicParsing="false" onAction="#signUp" text="Back" wrapText="true" >
+        <Button layoutX="30.0" mnemonicParsing="false" onAction="#back" text="Back" wrapText="true" >
         <font>
             <Font name="BM DoHyeon OTF" size="10" />
         </font>

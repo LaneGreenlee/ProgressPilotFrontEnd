@@ -47,4 +47,15 @@ public class StudentLogin extends App{
     private void switchToOverview() throws IOException {
         App.setRoot("studentLanding");
     }
+
+    @FXML
+    private void back() throws IOException {
+        switchBack();
+        // TODO: Add your logic here for user sign-up
+    }
+
+    @FXML
+    private void switchBack() throws IOException {
+        App.setRoot("login_page");
+    }
 }
