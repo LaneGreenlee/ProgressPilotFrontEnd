@@ -60,7 +60,7 @@ public class Course {
      * @param course course to check if it is GFL
      * @return true if GFL, false if not
      */
-    public boolean isGFL(Course course) {
+    public static boolean isGFL(Course course) {
         return (course.courseAttributes.contains("GFL"));
     }
     /***

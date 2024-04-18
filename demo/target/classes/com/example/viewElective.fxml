@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1440.0" style="-fx-background-color: #EBF7F7;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ViewElectives">
+    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+        <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="300.0" prefWidth="300.0">
+            <ImageView fitHeight="162.0" fitWidth="250.0" layoutX="22.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@logo.png" />
+                </image>
+            </ImageView>
+            <Line endX="1166.0" endY="13.0" layoutX="248.0" layoutY="173.0" startX="-38.0" startY="13.0" strokeWidth="3.0">
+                <stroke>
+                    <LinearGradient endX="1.0" endY="1.0">
+                        <stops>
+                            <Stop color="#101143" />
+                            <Stop color="WHITE" offset="1.0" />
+                        </stops>
+                    </LinearGradient>
+                </stroke>
+                <effect>
+                    <Lighting>
+                        <bumpInput>
+                            <Shadow />
+                        </bumpInput>
+                        <light>
+                        </light>
+                    </Lighting>
+                </effect>
+            </Line>
+            <Text fill="#111140" layoutX="256.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="View Electives">
+                <font>
+                    <Font name="BM DoHyeon OTF" size="38.0" />
+                </font>
+            </Text>
+            <TextField accessibleRole="TEXT_AREA" layoutX="1206.0" layoutY="151.0" promptText="Search" />
+        </AnchorPane>
+    </AnchorPane>
+    <StackPane>
+        <VBox alignment="CENTER_LEFT" style="-fx-padding: 150 0 0 100;">
+            <Rectangle arcHeight="20" arcWidth="20" fill="#09344D" height="500" width="400" />
+        </VBox>
+    </StackPane>
+    <StackPane>
+        <VBox alignment="CENTER_LEFT" style="-fx-padding: 150 0 0 300;">
+            <Rectangle arcHeight="20" arcWidth="20" fill="#09344D" height="500" width="400" />
+        </VBox>
+    </StackPane>
+    <StackPane>
+        <VBox alignment="CENTER_LEFT" style="-fx-padding: -250 0 0 200;">
+            <Text fx:id="elecTitle" fill="white" text="            Elective Types">
+                <font>
+                    <Font name="BM DoHyeon OTF" size="25" />
+                </font>
+            </Text>
+        </VBox>
+    </StackPane>
+   <StackPane>
+      <children>
+         <VBox alignment="CENTER_RIGHT" style="-fx-padding: 150 0 0 300;">
+            <children>
+               <Rectangle arcHeight="20" arcWidth="20" fill="#09344D" height="500" width="400">
+                  <VBox.margin>
+                     <Insets right="150.0" />
+                  </VBox.margin></Rectangle>
+            </children>
+         </VBox>
+      </children>
+   </StackPane>
+   <StackPane>
+      <children>
+         <VBox alignment="CENTER_LEFT" style="-fx-padding: -250 0 0 200;">
+            <children>
+               <Text fx:id="elecType" fill="white" text="            Elective Types">
+                  <font>
+                     <Font name="BM DoHyeon OTF" size="25" />
+                  </font>
+                  <VBox.margin>
+                     <Insets left="705.0" />
+                  </VBox.margin>
+               </Text>
+            </children>
+         </VBox>
+      </children>
+   </StackPane>
+    <StackPane>
+        <children>
+            <VBox alignment="CENTER_LEFT" style="-fx-padding: 100 0 0 200;">
+                <children>
+                    <Text fx:id="elecClass" fill="white" visible="true">
+                        <font>
+                            <Font name="BM DoHyeon OTF" size="25" />
+                        </font>
+                        <VBox.margin>
+                            <Insets left="705.0" />
+                        </VBox.margin>
+                        <VBox.margin>
+                            <Insets left="705.0" />
+                        </VBox.margin>
+                    </Text>
+                </children>
+            </VBox>
+        </children>
+    </StackPane>
+    <StackPane>
+        <VBox alignment="CENTER_LEFT" style="-fx-padding: 150 0 0 300;">
+            <Button fx:id="GSS" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" onAction="#gssSelect" text="GSS Elective" translateX="150.0" translateY="250.0">
+            <font>
+               <Font name="BM DoHyeon OTF" size="20" />
+            </font>
+         </Button>
+         <Button fx:id="AIU" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" onAction="#aiuSelect" text="AIU Elective" translateX="-150.0" translateY="300.0">
+            <font>
+               <Font name="BM DoHyeon OTF" size="20" />
+            </font>
+         </Button>
+            <Button fx:id="GFL" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" onAction="#gflSelect" text="GFL Elective" translateX="-150.0" translateY="50.0">
+                <font>
+                    <Font name="BM DoHyeon OTF" size="20" />
+                </font>
+            </Button>
+         <Button fx:id="GHS" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" onAction="#ghsSelect" prefWidth="200.0" text="GHS Elective" translateX="-150.0" translateY="100.0">
+            <font>
+               <Font name="BM DoHyeon OTF" size="20" />
+            </font>
+         </Button>
+         <Button fx:id="CMS" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" onAction="#cmsSelect" text="CMS Elective" translateX="150.0" translateY="-50.0">
+            <font>
+               <Font name="BM DoHyeon OTF" size="20" />
+            </font>
+         </Button>
+         <Button fx:id="addCourse" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" onAction="#addACourse" text="Add A Course" translateX="-150.0" translateY="190.0">
+            <font>
+               <Font name="BM DoHyeon OTF" size="20" />
+            </font>
+         </Button>
+            <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="612.0">
+                <children>
+                    <Text fx:id="promtCode" fill="white" text="Course Code: " translateX="-350.0" translateY="-100.0" visible="false">
+                        <font>
+                            <Font name="BM DoHyeon OTF" size="25" />
+                        </font>
+                        <VBox.margin>
+                            <Insets left="705.0" />
+                        </VBox.margin>
+                        <VBox.margin>
+                            <Insets left="705.0" />
+                        </VBox.margin>
+                    </Text>
+                    <Text fx:id="promtNumber" fill="white" text="Course Number: " translateX="-315.0" translateY="-50.0" visible="false">
+                        <font>
+                            <Font name="BM DoHyeon OTF" size="25" />
+                        </font>
+                        <VBox.margin>
+                            <Insets left="705.0" />
+                        </VBox.margin>
+                        <VBox.margin>
+                            <Insets left="705.0" />
+                        </VBox.margin>
+                    </Text>
+                    <TextField fx:id="courseCode" maxWidth="150.0" promptText="Enter Course Code here" translateX="-200.0" translateY="-160.0" visible="false" />
+                    <TextField fx:id="courseNumber" maxWidth="161.0" prefHeight="26.0" prefWidth="161.0" promptText="Enter Course Number here" translateX="-160.0" translateY="-105.0" visible="false" />
+                    <Button fx:id="addCourseButton" mnemonicParsing="false" onAction="#addCourseInput" prefHeight="52.0" prefWidth="89.0" text="Add Course" translateX="-310.0" translateY="-50.0" visible="false" />
+                    <Text fx:id="FailedToAdd" fill="#f80000" text="Failed to add course, &#10;please check your input and try again" textAlignment="CENTER" translateX="-175.0" visible="false">
+                        <font>
+                            <Font name="BM DoHyeon OTF" size="18.0" />
+                        </font>
+                    </Text>
+                    <Text fx:id="successAdd" fill="white" text="Successfully added course" textAlignment="CENTER" translateX="-225.0" visible="false">
+                         <font>
+                             <Font name="BM DoHyeon OTF" size="18.0" />
+                         </font>
+                    </Text>
+                </children>
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+            </VBox>
+         <StackPane maxWidth="200.0" minWidth="200.0" prefHeight="150.0" prefWidth="200.0">
+            <children>
+               <Button fx:id="switchToOverviewButton" alignment="BOTTOM_CENTER" maxWidth="200.0" minHeight="50" minWidth="50.0" onAction="#returnToOverview" prefHeight="77.0" prefWidth="200.0" text="Return To &#10;Overview" translateX="150.0" translateY="-100.0">
+                   <font>
+                      <Font name="BM DoHyeon OTF" size="20" />
+                   </font>
+               </Button>
+               <Button fx:id="INF" alignment="BOTTOM_CENTER" maxWidth="200" minHeight="50" minWidth="200" onAction="#infSelect" text="INF Elective" translateX="150.0" translateY="-200.0">
+                  <font>
+                     <Font name="BM DoHyeon OTF" size="20" />
+                  </font>
+               </Button>
+            </children>
+         </StackPane>
+        </VBox>
+    </StackPane>
+</StackPane>

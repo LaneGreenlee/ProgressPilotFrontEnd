@@ -46,7 +46,7 @@ public class AdvisorOverview extends App {
             studentName.setText("Viewing: " + StudentLogin.currentStudent.getFirstName() + " " + StudentLogin.currentStudent.getLastName());
             // Iterate over the HashMap entries and append key-value pairs to the StringBuilder
             for (Map.Entry<Course, Grade> entry : StudentLogin.currentStudent.completedCourses.entrySet()) {
-                stringBuilder.append(("\tCourse Name: ") + entry.getKey().getCourseCode() + (" ") +entry.getKey().getCourseNumber()+ ("\t, Grade: ") + entry.getValue() + ("\n"));
+                stringBuilder.append("\t     " + entry.getKey().getCourseCode() + (" ") +entry.getKey().getCourseNumber()+ (", \t\t\t") + entry.getValue() + ("\n"));
             }
 
             ArrayList<Course> remainingCourses = StudentLogin.currentStudent.getCoursesRemaining();

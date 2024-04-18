@@ -15,6 +15,7 @@
 <?import javafx.scene.text.Font?>
 
 
+<?import javafx.scene.control.PasswordField?>
 <StackPane style="-fx-background-color: #EBF7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.AdvisorLogin">
 
     <!-- Inner StackPane containing VBox -->
@@ -51,7 +52,7 @@
                     <Font name="BM DoHyeon OTF" size="25" />
                 </font>
             </Text>
-            <TextField fx:id="passwordTextField" prefWidth="200" promptText="Enter Password" />
+            <PasswordField fx:id="passwordTextField" prefWidth="200" promptText="Enter Password" />
         </HBox>
         <Button maxHeight="50" maxWidth="200" minHeight="50" minWidth="200" onAction="#signUp" text="Login" VBox.vgrow="ALWAYS" >
             <font>

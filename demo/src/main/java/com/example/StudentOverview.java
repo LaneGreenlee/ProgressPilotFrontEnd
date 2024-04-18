@@ -6,6 +6,7 @@ import javafx.scene.text.Text;
 import lib.Course;
 import lib.Grade;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -37,8 +38,9 @@ public class StudentOverview {
 
 
         // Iterate over the HashMap entries and append key-value pairs to the StringBuilder
+            System.out.println("\tCourse \t\t\t\t Grade");
         for (Map.Entry<Course, Grade> entry : StudentLogin.currentStudent.completedCourses.entrySet()) {
-            stringBuilder.append(("\tCourse Name: ") + entry.getKey().getCourseCode() + (" ") +entry.getKey().getCourseNumber()+ ("\t, Grade: ") + entry.getValue() + ("\n"));
+            stringBuilder.append("\t     " + entry.getKey().getCourseCode() + (" ") +entry.getKey().getCourseNumber()+ (", \t\t\t") + entry.getValue() + ("\n"));
         }
 
         ArrayList<Course> remainingCourses = StudentLogin.currentStudent.getCoursesRemaining();
@@ -53,9 +55,17 @@ public class StudentOverview {
         outputText.setText(stringBuilder.toString());
         courseToTake.setText(stringBuilderCourse.toString());
         notes.setText(stringBuilderNotes.toString());
+    }
 
+    @FXML
+    private void viewElec() throws IOException {
+        switchToViewElec();
+        // TODO: Add your logic here for user sign-up
+    }
 
-
+    @FXML
+    private void switchToViewElec() throws IOException {
+        App.setRoot("viewElective");
     }
 
 
