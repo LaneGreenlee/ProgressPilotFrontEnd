@@ -45,7 +45,7 @@ public class SignUp {
             facade.userlist.addStudent(newStudent);
 
             System.out.println(newStudent);
-            
+            // You may want to check if newStudent is null (meaning sign up failed)
         } else if (type.equals("Advisor")) {
             // Handle advisor sign up
             Advisor newAdvisor = facade.signupAdvisor(userName, password, firstName, lastName, uscId);
