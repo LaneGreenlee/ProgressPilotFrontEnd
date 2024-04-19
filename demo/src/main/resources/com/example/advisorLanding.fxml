@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
@@ -16,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1440.0" style="-fx-background-color: #EBF7F7;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="832.0" prefWidth="1440.0" style="-fx-background-color: #EBF7F7;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.AdvisorLanding">
    <children>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
@@ -69,7 +70,7 @@
                      </image>
                   </ImageView>
                   <Rectangle arcHeight="20" arcWidth="20" fill="#0c3146" height="455.0" layoutX="765.0" layoutY="101.0" stroke="#3588b9" strokeWidth="5.0" width="555.0" />
-                  <Button layoutX="208.0" layoutY="356.0" mnemonicParsing="false" prefHeight="137.0" prefWidth="273.0" text="View Student">
+                  <Button layoutX="208.0" layoutY="356.0" mnemonicParsing="false" onAction="#setStudent" prefHeight="100.0" prefWidth="273.0" text="View Student">
                      <font>
                         <Font name="BM DoHyeon OTF" size="23.0" />
                      </font>
@@ -85,17 +86,42 @@
                         <Font name="BM DoHyeon OTF" size="38.0" />
                      </font>
                   </Text>
-                  <TextField layoutX="872.0" layoutY="357.0" prefHeight="54.0" prefWidth="328.0" />
+                  <TextField fx:id="ID" layoutX="872.0" layoutY="357.0" prefHeight="54.0" prefWidth="328.0" />
                   <Text fill="WHITE" layoutX="838.0" layoutY="329.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please Input Student ID Below:" wrappingWidth="418.97509765625">
                      <font>
                         <Font name="BM DoHyeon OTF" size="20.0" />
                      </font>
                   </Text>
-                  <Button layoutX="982.0" layoutY="435.0" mnemonicParsing="false" text="Confirm">
+                  <Button layoutX="982.0" layoutY="435.0" mnemonicParsing="false" onAction="#addStudent" text="Confirm">
                      <font>
                         <Font name="BM DoHyeon OTF" size="24.0" />
                      </font>
                   </Button>
+                  <RadioButton fx:id="student1" layoutX="201.0" layoutY="150.0" mnemonicParsing="false" text="RadioButton" onAction="#radio1Select">
+                     <font>
+                        <Font name="BM DoHyeon OTF" size="13.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="student2" layoutX="201.0" layoutY="184.0" mnemonicParsing="false" text="RadioButton" onAction="#radio2Select">
+                     <font>
+                        <Font name="BM DoHyeon OTF" size="13.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="student3" layoutX="201.0" layoutY="218.0" mnemonicParsing="false" text="RadioButton" onAction="#radio3Select">
+                     <font>
+                        <Font name="BM DoHyeon OTF" size="13.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="student4" layoutX="201.0" layoutY="251.0" mnemonicParsing="false" text="RadioButton" onAction="#radio4Select">
+                     <font>
+                        <Font name="BM DoHyeon OTF" size="13.0" />
+                     </font>
+                  </RadioButton>
+                  <RadioButton fx:id="student5" layoutX="201.0" layoutY="288.0" mnemonicParsing="false" text="RadioButton" onAction="#radio5Select">
+                     <font>
+                        <Font name="BM DoHyeon OTF" size="13.0" />
+                     </font>
+                  </RadioButton>
                </children>
             </AnchorPane>
          </children></AnchorPane>

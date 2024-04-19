@@ -41,6 +41,15 @@ public class AdvisorLogin extends App {
     }
 
     @FXML
+    private void landing() throws IOException {
+        handleAdvisorInput();
+        switchToLanding();
+    }
+    @FXML
+    private void switchToLanding() throws IOException {
+        App.setRoot("advisorLanding");
+    }
+    @FXML
     private void switchToLogIn() throws IOException {
         App.setRoot("login_page");
     }

@@ -2,7 +2,7 @@ package lib;
 import java.util.ArrayList;
 import java.util.UUID;
 public class Advisor extends User{
-    public ArrayList<Student> students;
+    public ArrayList<Student> students = new ArrayList<>();
 
     /***
      * Constructor for creating a new advisor
@@ -42,8 +42,10 @@ public class Advisor extends User{
     protected void addStudent( String username ) {
       students.add(UserList.getStudent(username));
     }
-    protected void addStudentByID( String uscID ) {
+    public void addStudentByID( String uscID ) {
       students.add(UserList.getStudentUSCID(uscID));
+      if (students.contains(UserList.getStudent(uscID)))
+        System.out.println("Success");
     }
     protected Student getStudentByID (String Id) {
       for (int i = 0; i < students.size(); i++) {

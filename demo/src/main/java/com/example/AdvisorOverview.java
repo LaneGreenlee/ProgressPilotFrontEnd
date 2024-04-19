@@ -41,16 +41,14 @@ public class AdvisorOverview extends App {
             StringBuilder stringBuilder = new StringBuilder();
             StringBuilder stringBuilderCourse = new StringBuilder();
 
-            StudentLogin.currentStudent = facade.studentLogin("Brax", "West");
-
-            studentName.setText("Viewing: " + StudentLogin.currentStudent.getFirstName() + " " + StudentLogin.currentStudent.getLastName());
+            studentName.setText("Viewing: " + AdvisorLanding.viewingStudent.getFirstName() + " " + AdvisorLanding.viewingStudent.getLastName());
             // Iterate over the HashMap entries and append key-value pairs to the StringBuilder
-            for (Map.Entry<Course, Grade> entry : StudentLogin.currentStudent.completedCourses.entrySet()) {
+            for (Map.Entry<Course, Grade> entry : AdvisorLanding.viewingStudent.completedCourses.entrySet()) {
                 stringBuilder.append("\t     " + entry.getKey().getCourseCode() + (" ") +entry.getKey().getCourseNumber()+ (", \t\t\t") + entry.getValue() + ("\n"));
             }
 
-            ArrayList<Course> remainingCourses = StudentLogin.currentStudent.getCoursesRemaining();
-
+            ArrayList<Course> remainingCourses = AdvisorLanding.viewingStudent.getCoursesRemaining();
+            stringBuilderCourse.append("\n");
             for (Course course : remainingCourses) {
                 stringBuilderCourse.append(("\t") + course.getCourseCode() + " " + course.getCourseNumber() + "\n");
             }
@@ -61,16 +59,15 @@ public class AdvisorOverview extends App {
         }
 
         private void addNoteToStudent() {
-            if (AdvisorLogin.currentAdvisor != null && StudentLogin.currentStudent != null) {
+            if (AdvisorLogin.currentAdvisor != null && AdvisorLanding.viewingStudent != null) {
                 String notes = notesTextArea.getText();
                 System.out.println(notes);
-                System.out.println(StudentLogin.currentStudent.getUserName());
+                System.out.println(AdvisorLanding.viewingStudent.getUserName());
 
                 AdvisorLogin.currentAdvisor.students = new ArrayList<Student>();
-                AdvisorLogin.currentAdvisor.students.add(StudentLogin.currentStudent);
-                AdvisorLogin.currentAdvisor.addStudentNotes(StudentLogin.currentStudent.getUserName(), notes);
+                AdvisorLogin.currentAdvisor.students.add(AdvisorLanding.viewingStudent);
+                AdvisorLogin.currentAdvisor.addStudentNotes(AdvisorLanding.viewingStudent.getUserName(), notes);
             } else {
-                // Handle the case when AdvisorLogin.currentAdvisor or StudentLogin.currentStudent is null
                 System.out.println("Advisor or Student is not logged in.");
             }
         }
@@ -84,5 +81,14 @@ public class AdvisorOverview extends App {
     private void switchToLogIn() throws IOException {
         App.setRoot("login_page");
     }
+    @FXML
+    private void setLanding() throws IOException {
+            returnToLanding();
+    }
+    @FXML
+    private void returnToLanding() throws IOException {
+            App.setRoot("advisorLanding");
+    }
+
     }
 

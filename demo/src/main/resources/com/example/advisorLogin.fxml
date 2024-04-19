@@ -54,7 +54,7 @@
             </Text>
             <PasswordField fx:id="passwordTextField" prefWidth="200" promptText="Enter Password" />
         </HBox>
-        <Button maxHeight="50" maxWidth="200" minHeight="50" minWidth="200" onAction="#signUp" text="Login" VBox.vgrow="ALWAYS" >
+        <Button maxHeight="50" maxWidth="200" minHeight="50" minWidth="200" onAction="#landing" text="Login" VBox.vgrow="ALWAYS" >
             <font>
                 <Font name="BM DoHyeon OTF" size="20" />
             </font>
